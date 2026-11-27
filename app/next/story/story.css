@@ -152,7 +152,7 @@ h3{font-size:24px;margin-bottom:8px}
 .kitchen-labels li.on{opacity:1;transform:none;visibility:visible}
 .kitchen-labels .where{font-size:16px;color:var(--ink-soft)}
 .kitchen-labels h3{font-size:clamp(24px,3vw,34px);margin:2px 0 6px}
-.kitchen-labels h3 span{display:block;font-size:.62em;color:var(--celadon-deep)}
+.kitchen-labels h3 span{display:block;font-size:17px;color:var(--celadon-deep)}
 .verb-line b{font:500 22px var(--display);padding:0 6px;border-radius:8px;background:var(--dashi-pale);box-shadow:inset 0 -3px 0 var(--dashi)}
 .kitchen-labels .link{min-height:44px}
 .wheel-box{position:relative;height:0}
@@ -171,10 +171,10 @@ h3{font-size:24px;margin-bottom:8px}
 .mochi-stage img:nth-child(2){opacity:calc(clamp(0,calc((var(--p,0) - .29) * 12),1) - clamp(0,calc((var(--p,0) - .62) * 12),1));transform:scale(1.16)}
 .mochi-stage img:nth-child(3){opacity:clamp(0,calc((var(--p,0) - .62) * 12),1)}
 .jobs{display:grid;gap:10px}
-.jobs li{padding:14px 20px;border-radius:20px;opacity:.45;transition:opacity .3s,background .3s,box-shadow .3s,transform .3s var(--ease)}
-.jobs li.on{opacity:1;background:var(--paper);box-shadow:6px 12px 28px var(--shade);transform:translateX(6px)}
+.jobs li{padding:14px 20px;border-radius:20px;transition:background .3s,box-shadow .3s,transform .3s var(--ease)}
+.jobs li.on{background:var(--paper);box-shadow:6px 12px 28px var(--shade);transform:translateX(6px)}
 .jobs h3{margin-bottom:2px}
-.jobs p{color:var(--ink-soft);font-size:17px;line-height:1.4}
+.jobs p{font-size:17px;line-height:1.4}
 
 /* ───── before and after: the new screen wipes across the old one ───── */
 .pairs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap);max-width:760px}
@@ -259,7 +259,7 @@ h3{font-size:24px;margin-bottom:8px}
 .still .kitchen-labels{gap:12px}
 .still .kitchen-labels li{grid-area:auto;opacity:1;transform:none;visibility:visible}
 .still .wheel-box{display:none}
-.still .jobs li{opacity:1;background:var(--paper);transform:none}
+.still .jobs li{background:var(--paper);transform:none}
 .still .mochi-stage img:nth-child(1){opacity:1}
 .still .mochi-stage img:nth-child(n+2){opacity:0}
 .still .btn{transition:none}
