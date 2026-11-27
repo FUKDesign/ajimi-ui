@@ -18,9 +18,35 @@
     keep: '<svg viewBox="0 0 24 24"><path d="M6.5 3.5h11v17l-5.5-4-5.5 4z"/></svg>'
   };
 
-  /* Hand-made clay renders exist for the udon kitchen. Other dishes use the original pantry renders. */
-  const clay = {udon: 'udon', scallion: 'negi', ginger: 'shoga', cabbage: 'cabbage', stock: 'dashi', soy: 'soy'};
-  const pic = k => clay[k] ? `img/${clay[k]}.webp` : `../assets/pantry/${k}.webp`;
+  /* Every word has a clay model. A few file names differ from the vocabulary key. */
+  const clay = {scallion: 'negi', ginger: 'shoga', stock: 'dashi', pancake: 'dish-osaka'};
+  const pic = k => `img/${clay[k] || k}.webp`;
+  const dishPic = id => id === 'kagawa' ? 'img/bowl-3.webp' : `img/dish-${id}.webp`;
+
+  /* The seasoning line is the sentence the voice actor recorded. Romaji and the verbs to highlight are listed per kitchen. */
+  const SEASON = {
+    hokkaido: {ro: 'shōyu o nikai, mirin o ikkai.', verbs: []},
+    fukuoka: {ro: 'dashi o nikai. shōyu wa irenaide.', verbs: [['入れないで', 'x-irenai']]},
+    osaka: {ro: 'okonomi sōsu o nikai nutte, mayonēzu o ikkai kakete.', verbs: [['ぬって', 'x-nuru'], ['かけて', 'tech-pour']]},
+    aichi: {ro: 'misodare o nihai kakete, karashi o sukoshi soete.', verbs: [['かけて', 'tech-pour'], ['添えて', 'x-soeru']]},
+    miyagi: {ro: 'mizu o ippai, shio o hitotsumami kuwaete, mochi ni karamete.', verbs: [['加えて', 'x-kuwaeru']]},
+    niigata: {ro: 'shōyu o nikai, mirin o ikkai irete nite. tonkatsu o kugurasete.', verbs: [['入れて', 'x-ireru']]},
+    hiroshima: {ro: 'shōyu to mirin o ikkai zutsu irete nite. nijiru de kome o taite.', verbs: [['入れて', 'x-ireru']]},
+    nagano: {ro: 'abura o ippai irete nasu o itame, miso to satō ippai o mazete. kawa de tsutsunde yaite.', verbs: [['入れて', 'x-ireru']]},
+    tokyo: {ro: 'dashi o nihai irete nite. miso o ippai toite, gohan ni kakete.', verbs: [['入れて', 'x-ireru']]},
+    okinawa: {ro: 'shōyu o ikkai, shio o hitotsumami irete.', verbs: [['入れて', 'x-ireru']]},
+    kyoto: {ro: 'kozara ni ponzu o nikai. shōyu wa irenaide.', verbs: [['入れないで', 'x-irenai']]}
+  };
+  Object.assign(vocab, {
+    'x-noseru': {japanese: 'のせる', kana: 'のせる', romaji: 'noseru', english: 'put on top'},
+    'x-ireru': {japanese: '入れる', kana: 'いれる', romaji: 'ireru', english: 'put in'},
+    'x-irenai': {japanese: '入れない', kana: 'いれない', romaji: 'irenai', english: 'do not put in'},
+    'x-nuru': {japanese: 'ぬる', kana: 'ぬる', romaji: 'nuru', english: 'brush on'},
+    'x-soeru': {japanese: '添える', kana: 'そえる', romaji: 'soeru', english: 'put on the side'},
+    'x-kuwaeru': {japanese: '加える', kana: 'くわえる', romaji: 'kuwaeru', english: 'add'}
+  });
+  /* 杯 for ladles and spoonfuls when the recorded sentence uses it, 回 for everything else */
+  const unitJP = (l, b) => /ladle|spoon/.test(b[2]) && l.seasonJP.includes('杯') ? '杯' : '回';
 
   /* ── saved words ── */
   const KEY = 'ajimi-next-saved';
@@ -103,7 +129,7 @@
     const n = lessons.length, step = 360 / n;
     view.innerHTML = `<section class="table">
       <div class="wheel-zone" aria-hidden="true">
-        <div class="wheel">${lessons.map((l, i) => `<div class="plate" style="--a:${-i * step}deg"><img src="../assets/${l.id}-plate.webp" alt="" loading="${Math.abs(i - at) < 3 ? 'eager' : 'lazy'}"></div>`).join('')}</div>
+        <div class="wheel">${lessons.map((l, i) => `<div class="plate" style="--a:${-i * step}deg"><img src="${dishPic(l.id)}" alt="" loading="${Math.abs(i - at) < 3 ? 'eager' : 'lazy'}"></div>`).join('')}</div>
         <div class="table-head"><img src="../assets/mark.svg" alt=""><span></span></div>
       </div>
       <div class="dish-card glass" role="group" aria-roledescription="carousel" aria-label="Regional dishes">
@@ -185,13 +211,15 @@
     const t = l.technique, tk = 'tech-' + (l.phrase.parts.find(p => p.startsWith('tech-')) || 'tech-' + t.key).replace('tech-', '');
     const obj = W(l.phrase.parts[0]), isUdon = l.id === 'kagawa';
     const [b1, b2] = l.bottles;
-    const countRo = b => COUNT_RO[['', '一', '二', '三'][b[1]] + (b[2].startsWith('ladle') ? '杯' : '回')] || '';
+    const countRo = b => COUNT_RO[['', '一', '二', '三'][b[1]] + unitJP(l, b)] || '';
+    const marked = s => SEASON[l.id].verbs.reduce((h, [v, k]) => h.replace(v, `<button class="verb" data-word="${k}" lang="ja">${v}</button>`), esc(s));
     const lines = [
       {ja: `${esc(obj.japanese)}を<button class="verb" data-word="${tk}" lang="ja">${esc(t.word)}</button>`, en: l.phrase.english, ro: `${obj.romaji} o ${W(tk).romaji}`, audio: 'phrase-' + l.id},
-      {ja: `${esc(W(b1[0]).japanese)}を${counter(b1)}、${esc(W(b2[0]).japanese)}を${counter(b2)}<button class="verb" data-word="tech-pour" lang="ja">かける</button>`, en: `Add ${b1[1]} ${b1[2]} of ${W(b1[0]).english} and ${b2[1]} ${b2[2]} of ${W(b2[0]).english}.`, ro: `${W(b1[0]).romaji} o ${countRo(b1)}, ${W(b2[0]).romaji} o ${countRo(b2)} kakeru`, audio: l.id + '-pour'},
+      isUdon
+        ? {ja: `${esc(W(b1[0]).japanese)}を${counter(b1)}、${esc(W(b2[0]).japanese)}を${counter(b2)}<button class="verb" data-word="tech-pour" lang="ja">かける</button>`, en: `Add ${b1[1]} ${b1[2]} of ${W(b1[0]).english} and ${b2[1]} ${b2[2]} of ${W(b2[0]).english}.`, ro: `${W(b1[0]).romaji} o ${countRo(b1)}, ${W(b2[0]).romaji} o ${countRo(b2)} kakeru`, audio: l.id + '-pour'}
+        : {ja: marked(l.seasonJP), en: l.seasonEN, ro: SEASON[l.id].ro, audio: l.id + '-pour'},
       ...(isUdon ? [{ja: `ねぎとしょうがを<button class="verb" data-word="x-noseru" lang="ja">のせる</button>`, en: 'Put the spring onion and ginger on top.', ro: 'negi to shōga o noseru', audio: l.id + '-pour'}] : [])
     ];
-    vocab['x-noseru'] = {japanese: 'のせる', kana: 'のせる', romaji: 'noseru', english: 'put on top'};
     let cur = 0;
     const draw = () => {
       shell(l, 'method', stageFor(cur),
@@ -199,10 +227,10 @@
          <div class="foot"><button class="round" data-hear="${lines[cur].audio}" aria-label="Hear the instruction">${icon.hear}</button>${footFor(cur)}</div>`, cur / lines.length);
       wire(cur);
     };
-    function counter([k, n, unit]) { const c = unit.startsWith('ladle') ? '杯' : '回'; return ['', '一', '二', '三'][n] + c; }
+    function counter(b) { return ['', '一', '二', '三'][b[1]] + unitJP(l, b); }
     const stageFor = i => i === 0
-      ? `<div class="pot" data-tech-key="boil" data-tech-count="0" data-tech-done="false"><button data-act="tech-surface" aria-label="Hold the pot to ${esc(t.en)}"><img src="${isUdon ? '../assets/pantry/donabe.webp' : '../assets/' + l.id + '-plate.webp'}" alt="">${isUdon ? '<ajimi-boil aria-hidden="true"></ajimi-boil>' : ''}</button><div class="meter" role="progressbar" aria-label="${esc(t.en)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div></div>`
-      : `<div class="bowl">${isUdon ? [0, 1, 2, 3].map(n => `<img src="img/bowl-${n}.webp" alt="" data-b="${n}" class="${n === (i === 1 ? 1 : 2) ? 'on' : ''}">`).join('') : `<img src="../assets/${l.id}-plate.webp" alt="" class="on">`}</div>`;
+      ? `<div class="pot${isUdon ? '' : ' clay-act'}" data-tech-key="${esc(t.key)}" data-method="${esc(t.method)}" data-tech-count="0" data-tech-done="false"><button data-act="tech-surface" aria-label="Hold to ${esc(t.en)}"><img src="${isUdon ? '../assets/pantry/donabe.webp' : pic(l.phrase.parts[0])}" alt="">${isUdon ? '<ajimi-boil aria-hidden="true"></ajimi-boil>' : '<span class="heat" aria-hidden="true"><i></i><i></i><i></i></span>'}</button><div class="meter" role="progressbar" aria-label="${esc(t.en)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div></div>`
+      : `<div class="bowl">${isUdon ? [0, 1, 2, 3].map(n => `<img src="img/bowl-${n}.webp" alt="" data-b="${n}" class="${n === (i === 1 ? 1 : 2) ? 'on' : ''}">`).join('') : `<img src="${dishPic(l.id)}" alt="" class="on">`}</div>`;
     const footFor = i => i === 0 ? `<button class="btn go" data-hold>Hold to ${esc(t.en)}</button>`
       : i === 1 ? `<div class="tray">${[b1, b2].map(b => `<button class="tool" data-pour="${b[0]}"><img src="${pic(b[0])}" alt=""><span class="ja" lang="ja">${esc(W(b[0]).japanese)}</span><span class="en">${esc(W(b[0]).english)}</span><span class="count" lang="ja" hidden></span></button>`).join('')}</div>`
       : `<div class="tray">${['scallion', 'ginger'].map(k => `<button class="tool" data-top="${k}"><img src="${pic(k)}" alt=""><span class="ja" lang="ja">${esc(W(k).japanese)}</span><span class="en">${esc(W(k).english)}</span></button>`).join('')}</div>`;
@@ -241,12 +269,13 @@
         tap = e => {
           const b = e.target.closest('[data-pour]'); if (!b) return;
           const k = b.dataset.pour; got[k]++;
-          const c = $('.count', b); c.hidden = false; c.textContent = ['', '一', '二', '三', '四'][got[k]] + (k === b1[0] && b1[2].startsWith('ladle') ? '杯' : '回');
+          const c = $('.count', b); c.hidden = false; c.textContent = ['', '一', '二', '三', '四'][got[k]] + unitJP(l, k === b1[0] ? b1 : b2);
           bowl.classList.remove('splash'); void bowl.offsetWidth; bowl.classList.add('splash');
           if (isUdon && k === 'stock') { $$('img', bowl).forEach(im => im.classList.toggle('on', im.dataset.b === '2')); }
           hear(k);
           if (got[k] > need[k]) {
-            const miss = k === b1[0] ? l.missHigh : l.missSecondHigh;
+            const miss = need[k] === 0 ? [`${W(k).japanese}は入れないで。`, '', `Leave out the ${W(k).english} this time.`]
+              : (k === b1[0] ? l.missHigh : l.missSecondHigh) || ['多すぎる。', '', 'Too much. Listen for the measure again.'];
             mochi('puff', miss[0], miss[2], 2600);
             setTimeout(() => { for (const x in got) got[x] = 0; $$('.count').forEach(x => x.hidden = true); if (isUdon) $$('img', bowl).forEach(im => im.classList.toggle('on', im.dataset.b === '1')); }, 1300);
             return;
@@ -274,13 +303,14 @@
     const tk = l.phrase.parts.find(p => p.startsWith('tech-')), obj = l.phrase.parts[0];
     const others = Object.keys(vocab).filter(k => k.startsWith('tech-') && k !== tk);
     const pick = (arr, n, seed) => arr.map((v, i) => [Math.sin(seed * 99 + i * 7.3), v]).sort((a, b) => a[0] - b[0]).slice(0, n).map(x => x[1]);
-    const [b1] = l.bottles, countJP = n => ['', '一', '二', '三'][n] + (b1[2].startsWith('ladle') ? '杯' : '回');
+    const [b1] = l.bottles, countJP = n => ['', '一', '二', '三'][n] + unitJP(l, b1);
     const food = [...l.ingredients, l.odd];
+    const withAnswer = (a, seed) => pick([a, ...food.filter(k => k !== a).slice(0, 3)], 4, seed);
     let qs = [
-      {pic: pic(obj), before: '', after: `を${esc(W(tk).japanese)}`, answer: obj, opts: pick(food, 4, 1), key: obj},
-      {pic: l.id === 'kagawa' ? '../assets/pantry/donabe.webp' : `../assets/${l.id}-plate.webp`, before: `${esc(W(obj).japanese)}を`, after: '', answer: tk, opts: pick([tk, ...pick(others, 3, 2)], 4, 3), key: tk},
-      {pic: pic(b1[0]), before: `${esc(W(b1[0]).japanese)}を`, after: 'かける', answer: countJP(b1[1]), opts: [1, 2, 3].map(countJP), raw: true, key: b1[0]},
-      {pic: pic(l.ingredients[1]), before: '', after: l.id === 'kagawa' ? 'をのせる' : '', answer: l.ingredients[1], opts: pick(food, 4, 5), key: l.ingredients[1]}
+      {pic: pic(obj), before: '', after: `を${esc(W(tk).japanese)}`, answer: obj, opts: withAnswer(obj, 1), key: obj},
+      {pic: l.id === 'kagawa' ? '../assets/pantry/donabe.webp' : dishPic(l.id), before: `${esc(W(obj).japanese)}を`, after: '', answer: tk, opts: pick([tk, ...pick(others, 3, 2)], 4, 3), key: tk},
+      {pic: pic(b1[0]), before: `${esc(W(b1[0]).japanese)}を`, after: l.id === 'kagawa' ? 'かける' : '', answer: countJP(b1[1]), opts: [1, 2, 3].map(countJP), raw: true, key: b1[0]},
+      {pic: pic(l.ingredients[1]), before: '', after: l.id === 'kagawa' ? 'をのせる' : '', answer: l.ingredients[1], opts: withAnswer(l.ingredients[1], 5), key: l.ingredients[1]}
     ];
     /* the words you saved come back first */
     qs = [...qs.filter(q => saved.has(q.key)), ...qs.filter(q => !saved.has(q.key))];
@@ -317,7 +347,7 @@
     const words = [...l.ingredients, ...l.bottles.map(b => b[0]), l.phrase.parts.find(p => p.startsWith('tech-'))];
     const kept = sessionStorage.getItem('ajimi-kept') || '';
     shell(l, 'taste',
-      `<img class="finale" src="${l.id === 'kagawa' ? 'img/bowl-3.webp' : '../assets/' + l.id + '-plate.webp'}" alt="${esc(l.dish)}"><div class="steam" aria-hidden="true"><i></i><i></i><i></i></div>`,
+      `<img class="finale" src="${dishPic(l.id)}" alt="${esc(l.dish)}"><div class="steam" aria-hidden="true"><i></i><i></i><i></i></div>`,
       `<h2 lang="ja">${esc(l.jp)}</h2><p class="hint">${esc(l.dish)}, ${esc(l.name)}. Tap a word to hear it again.</p>
        <div class="learned">${words.map(k => `<button class="chip ${saved.has(k) ? 'kept' : ''}" data-word="${k}" lang="ja">${esc(W(k).japanese)}<small class="ro" lang="en">${esc(W(k).romaji)}</small><small lang="en">${esc(W(k).english)}</small></button>`).join('')}</div>
        <details class="diet"><summary>Dietary notes</summary><p>${esc(l.dietary)}</p></details>
