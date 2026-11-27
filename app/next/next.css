@@ -338,22 +338,27 @@ details.diet summary{min-height:44px;display:flex;align-items:center;font-weight
 .lines li.now .ja{font-size:clamp(17px,4.6vw,21px)}
 @media (prefers-reduced-motion:reduce){.pot.clay-act .tech-engaged img{animation:none!important;transform:scale(.97)}.heat{display:none}}
 
-/* ───── each dish sits on the outline of its prefecture, with the name written on it ───── */
-.region{position:absolute;left:50%;top:50%;width:210%;height:210%;transform:translate(-50%,-50%);z-index:-1;opacity:0;transition:opacity .5s var(--ease);pointer-events:none;overflow:visible}
-.plate.cur .region{opacity:1}
-.region path{fill:rgba(255,255,255,.34);stroke:#fff;stroke-width:1.1;stroke-linejoin:round;vector-effect:non-scaling-stroke}
-.region text{font:500 9px var(--display);fill:var(--ink);paint-order:stroke;stroke:rgba(255,255,255,.75);stroke-width:2.4px;stroke-linejoin:round}
-.region .rn{font:700 5.2px var(--text);fill:var(--ink-soft);letter-spacing:.04em}
-@media (prefers-reduced-motion:reduce){.region{transition:none}}
-
-/* ───── the chosen dish fills the table: it zooms in large each time the table turns ───── */
-.plate img{transition:transform .7s cubic-bezier(.2,.9,.2,1)}
-.plate.cur{z-index:3}
-.plate.cur img{transform:scale(1.5);animation:dish-in .75s cubic-bezier(.2,.9,.2,1)}
-.plate:not(.cur) img{transform:scale(.7)}
-@keyframes dish-in{0%{transform:scale(.8)}60%{transform:scale(1.62)}100%{transform:scale(1.5)}}
-.region{width:150%;height:150%}
-@media (min-width:860px){.plate.cur img{transform:scale(1.9);animation-name:dish-in-wide}.plate:not(.cur) img{transform:scale(.8)}}
-@keyframes dish-in-wide{0%{transform:scale(1)}60%{transform:scale(2.05)}100%{transform:scale(1.9)}}
-@media (prefers-reduced-motion:reduce){.plate img{transition:none}.plate.cur img{animation:none}}
-@media (max-width:859px){.region{width:235%;height:235%}}
+/* ───── the chosen dish: it leaves the wheel, enters the centre of the screen and grows, over the outline of its prefecture ───── */
+.plate img{transition:transform .5s var(--ease),opacity .3s}
+.plate.cur img{opacity:0;transform:scale(.6)}
+.focus{position:absolute;left:50%;top:46%;width:min(96vw,54vh,470px);aspect-ratio:1;transform:translate(-50%,-50%);z-index:4;pointer-events:none}
+.focus-in,.focus-out{position:absolute;inset:0}
+.focus img{position:absolute;inset:13%;width:74%;height:74%;object-fit:contain;filter:drop-shadow(10px 18px 14px rgba(31,58,52,.34))}
+.focus .region{position:absolute;inset:-22%;width:144%;height:144%;overflow:visible}
+.focus .region path{fill:rgba(255,255,255,.42);stroke:var(--ink);stroke-opacity:.6;stroke-width:1.5;stroke-linejoin:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:0}
+.focus .region text{font:500 9px var(--display);fill:var(--ink);paint-order:stroke;stroke:rgba(255,255,255,.8);stroke-width:2.4px;stroke-linejoin:round}
+.focus .region .rn{font:700 4.6px var(--text);fill:var(--ink-soft);letter-spacing:.04em}
+.focus-in img{animation:dish-enter .75s cubic-bezier(.2,.9,.2,1) both}
+.focus-in .region{animation:region-in .6s .15s var(--ease) both}
+.focus-in .region path{animation:region-draw .9s .1s ease-out both}
+.focus-out{animation:dish-leave .4s ease-in both}
+@keyframes dish-enter{0%{opacity:0;transform:translate(calc(var(--dir,0) * 60%),46%) scale(.32) rotate(calc(var(--dir,0) * 40deg))}70%{opacity:1;transform:translate(0,0) scale(1.07)}100%{transform:none}}
+@keyframes dish-leave{to{opacity:0;transform:translate(calc(var(--dir,0) * -55%),40%) scale(.34)}}
+@keyframes region-in{from{opacity:0;transform:scale(.86)}}
+@keyframes region-draw{from{stroke-dashoffset:1;fill:rgba(255,255,255,0)}}
+/* shadows are drawn here, not baked into the art */
+.card .clay,.bowl img,.finale,.q-pic,.pot.clay-act img{filter:drop-shadow(10px 18px 14px rgba(31,58,52,.3))}
+.tool img{filter:drop-shadow(3px 5px 4px rgba(31,58,52,.28))}
+.plate{filter:drop-shadow(4px 8px 7px rgba(31,58,52,.3))}
+@media (min-width:860px){.focus{left:50%;top:50%;width:min(34vw,50vh,460px)}}
+@media (prefers-reduced-motion:reduce){.focus-in img,.focus-in .region,.focus-in .region path,.focus-out{animation:none}.focus-out{display:none}}
