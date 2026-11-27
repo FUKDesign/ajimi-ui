@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Aidan McFarlane">
+<meta name="description" content="Ajimi teaches the Japanese in a recipe, then has you cook with it. A case study by Aidan McFarlane.">
+<title>Ajimi | Aidan McFarlane</title>
+<link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="story.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the case study</a>
+<header class="mast">
+  <a class="name" href="https://aidanmdesign.xyz/">Aidan McFarlane</a>
+  <nav aria-label="Case study">
+    <a href="#flows">Flows</a>
+    <a href="#mochi">Mochi</a>
+    <a href="#system">System</a>
+    <a class="btn go" href="../#table">Open the app</a>
+  </nav>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="hero-copy">
+    <h1>Learn Japanese by cooking dinner</h1>
+    <p>Ajimi teaches the words in a recipe, then you cook with them.</p>
+    <div class="actions">
+      <a class="btn go" href="../#lesson/kagawa/ingredients">Cook the udon</a>
+      <a class="link" href="#flows">See the flows</a>
+    </div>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>Product design, UI, illustration direction</dd></div>
+      <div><dt>Year</dt><dd>2026, independent project</dd></div>
+    </dl>
+  </div>
+  <figure class="hero-pic">
+    <img src="../img/bowl-3.webp" alt="A clay model of Sanuki udon with spring onion and ginger" width="960" height="960">
+    <img class="hero-mochi" src="../img/mochi-happy.webp" alt="" width="880" height="880">
+  </figure>
+</section>
+
+<section class="why" id="why">
+  <h2>Vocabulary lists are easy to finish and easy to forget</h2>
+  <div class="cols">
+    <p>Most Japanese apps teach a word, test it, then move to the next one. The word never has a job to do. Ajimi gives it one. You learn うどん and ゆでる because the next screen asks you to boil the noodles.</p>
+    <ul class="figures">
+      <li><b>4,000,750</b><span>people study Japanese at institutions outside Japan. Self-taught learners are not counted.</span><a href="https://www.jpf.go.jp/j/about/press/2025/dl/2025-031-03.pdf">Japan Foundation, 2024 survey</a></li>
+      <li><b>42.7 million</b><span>people visited Japan in 2025, a record.</span><a href="https://www.jnto.go.jp/news/press/20260121_monthly.html">JNTO, January 2026</a></li>
+    </ul>
+  </div>
+  <div class="people">
+    <article><h3>The learner at home</h3><p>Knows kana, has tried an app or two, and stops when lessons feel like filing. Wants Japanese that turns up in ordinary life.</p></article>
+    <article><h3>The visitor who came for the food</h3><p>Has a trip booked and a list of dishes. Wants to read a menu and follow what the cook is saying.</p></article>
+  </div>
+</section>
+
+<section class="reason">
+  <h2>Three findings the lesson is built on</h2>
+  <ol class="findings">
+    <li><h3>Doing the action helps the phrase stick</h3><p>A review of 145 studies found people remember an action phrase better after performing it than after reading it. So you hold the pot.</p><a href="https://uwaterloo.ca/memory-attention-cognition-lab/sites/default/files/uploads/files/enact22.pdf">Roberts, MacLeod and Fernandes, 2022</a></li>
+    <li><h3>Being tested beats rereading</h3><p>Recalling a word a little later holds it longer than seeing it again. So the review comes after the cooking.</p><span class="src">Roediger and Karpicke, 2006</span></li>
+    <li><h3>Context matters more than repetition</h3><p>A word met in a clear setting is learned better than one met often. So every word arrives with its ingredient.</p><a href="https://nflrc.hawaii.edu/rfl/item/178">Webb, 2008</a></li>
+  </ol>
+  <p class="note">These are reasons for the design. Ajimi has not been tested with participants yet.</p>
+</section>
+
+<section class="journey" id="journey">
+  <h2>One dish, four steps</h2>
+  <ol class="steps">
+    <li>
+      <div class="wire" aria-hidden="true"><i class="w-bar"></i><i class="w-pic"></i><i class="w-word"></i><i class="w-dots"></i><i class="w-btn"></i></div>
+      <img src="media/word.webp" alt="Ingredient screen showing clay udon noodles and the word うどん" width="780" height="1688" loading="lazy">
+      <h3><span lang="ja">材料</span> Ingredients</h3>
+      <p>Meet each word with its ingredient. Save the ones you do not know.</p>
+    </li>
+    <li>
+      <div class="wire" aria-hidden="true"><i class="w-bar"></i><i class="w-pic round"></i><i class="w-line"></i><i class="w-line"></i><i class="w-btn"></i></div>
+      <img src="media/boil.webp" alt="Method screen with a clay pot of noodles and the sentence うどんをゆでる" width="780" height="1688" loading="lazy">
+      <h3><span lang="ja">作り方</span> Method</h3>
+      <p>Read the sentence, then do the verb. The verb is the only thing highlighted.</p>
+    </li>
+    <li>
+      <div class="wire" aria-hidden="true"><i class="w-bar"></i><i class="w-pic"></i><i class="w-word"></i><i class="w-grid"></i></div>
+      <img src="media/quiz.webp" alt="Review screen with a missing word and four answers" width="780" height="1688" loading="lazy">
+      <h3><span lang="ja">復習</span> Review</h3>
+      <p>Fill the missing word. Saved words come first.</p>
+    </li>
+    <li>
+      <div class="wire" aria-hidden="true"><i class="w-bar"></i><i class="w-pic round big"></i><i class="w-chips"></i><i class="w-btn"></i></div>
+      <img src="media/taste.webp" alt="Finished bowl of udon with the words learned listed below" width="780" height="1688" loading="lazy">
+      <h3><span lang="ja">味見</span> Taste</h3>
+      <p>The finished bowl, Mochi’s verdict and every word you used.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="flows" id="flows">
+  <h2>The flows, recorded from the working app</h2>
+  <div class="flow lead">
+    <img src="media/boil.gif" alt="Holding the pot brings the water to a rolling boil and fills the progress bar" width="390" height="844" loading="lazy">
+    <div><h3>Hold the pot to boil</h3><p>Pressing builds a rolling boil. Letting go lets the water settle. With reduced motion on, three presses do the same job, and the keyboard works throughout.</p></div>
+  </div>
+  <div class="flow-row">
+    <figure><img src="media/table.gif" alt="Swiping the table turns it from oyaki to Sanuki udon" width="390" height="844" loading="lazy"><figcaption><b>Turn the table.</b> The plate follows the finger. Learn recipe and Skip to recipe sit side by side.</figcaption></figure>
+    <figure><img src="media/ingredients.gif" alt="Swiping through ingredient words, revealing a meaning and saving a word" width="390" height="844" loading="lazy"><figcaption><b>Save what you do not know.</b> The meaning stays hidden until you ask for it.</figcaption></figure>
+    <figure><img src="media/season.gif" alt="Two ladles of dashi and one pour of soy sauce fill the bowl, then toppings are added" width="390" height="844" loading="lazy"><figcaption><b>Count in Japanese.</b> Two ladles, one pour. A third ladle gets a reaction.</figcaption></figure>
+    <figure><img src="media/quiz.gif" alt="A wrong answer makes Mochi puff up, then the right answer fills the gap" width="390" height="844" loading="lazy"><figcaption><b>Get one wrong.</b> Mochi puffs up like a rice cake on a grill, and you try again.</figcaption></figure>
+  </div>
+  <p class="film"><a class="btn soft" href="media/udon-flow.mp4">Watch the full session</a></p>
+</section>
+
+<section class="mochi" id="mochi">
+  <div class="mochi-head">
+    <h2>What the mochi is for</h2>
+    <p>The first version had a character and no job for it. Ajimi means tasting as you cook, so Mochi became the taster. Two more jobs followed from that.</p>
+  </div>
+  <ul class="jobs">
+    <li><img src="../img/mochi-happy.webp" alt="Mochi hopping with its spoon raised" width="880" height="880" loading="lazy"><h3>Taster</h3><p>There is no score. Mochi tastes the bowl and tells you, in Japanese, how it went.</p></li>
+    <li><img src="../img/mochi-puff.webp" alt="Mochi puffed up with a toasted patch" width="880" height="880" loading="lazy"><h3>Keeper of misses</h3><p>A wrong answer puffs Mochi up. It also keeps that word and asks you first next time.</p></li>
+    <li><img src="../img/mochi-idle.webp" alt="Mochi standing with a wooden spoon" width="880" height="880" loading="lazy"><h3>Hint on request</h3><p>Tap Mochi on any screen. It says the word aloud, or removes one wrong answer.</p></li>
+  </ul>
+</section>
+
+<section class="compare" id="before">
+  <h2>Before and after</h2>
+  <div class="pairs">
+    <figure><div><img src="media/before-mobile-menu.webp" alt="Earlier dish menu with a website header and stacked cards" width="390" height="844" loading="lazy"><img src="media/table.webp" alt="New dish table with one glass card over the wheel" width="780" height="1688" loading="lazy"></div><figcaption>The dish table lost its website header and its footer. One card now carries the choice.</figcaption></figure>
+    <figure><div><img src="media/before-mobile-boil.webp" alt="Earlier boil screen with a pink instruction card" width="390" height="1080" loading="lazy"><img src="media/boil.webp" alt="New boil screen with the recipe as three sentences" width="780" height="1688" loading="lazy"></div><figcaption>The boil screen fits one screen. The instruction is the Japanese sentence itself.</figcaption></figure>
+  </div>
+</section>
+
+<section class="system" id="system">
+  <h2>Clay, glass and one light</h2>
+  <div class="sys">
+    <div class="swatches" aria-label="Colour palette">
+      <span style="--c:var(--paper)">Paper</span><span style="--c:var(--rice)">Rice</span><span style="--c:var(--celadon)">Celadon</span><span style="--c:var(--dashi)">Dashi</span><span class="dark" style="--c:var(--vermilion)">Kerchief</span><span class="dark" style="--c:var(--ink)">Ink</span>
+    </div>
+    <p>Every colour comes from the kitchen: the glaze on the wheel, the broth, Mochi’s headscarf. Vermilion is kept for the one thing you should press next.</p>
+    <div class="type">
+      <p class="t1" lang="ja">ゆでる <span>Kiwi Maru</span></p>
+      <p class="t2">Boil the udon noodles. <span>Atkinson Hyperlegible Next</span></p>
+      <p class="t3" lang="ja">だしを二杯かける <span lang="en">BIZ UDPGothic</span></p>
+    </div>
+    <div class="clay-row"><img src="../img/udon.webp" alt="Clay udon" width="880" height="880" loading="lazy"><img src="../img/negi.webp" alt="Clay spring onion" width="880" height="880" loading="lazy"><img src="../img/shoga.webp" alt="Clay ginger" width="880" height="880" loading="lazy"><img src="../img/dashi.webp" alt="Clay pan of dashi" width="880" height="880" loading="lazy"><img src="../img/soy.webp" alt="Clay soy sauce bottle" width="880" height="880" loading="lazy"></div>
+    <p>The food is clay, lit from the upper left, and every button casts its shadow the same way. Glass appears only where a panel passes over food.</p>
+  </div>
+</section>
+
+<section class="next">
+  <h2>What is not done</h2>
+  <ul>
+    <li>No one outside the project has used it. The first test is whether a new learner finds Learn recipe, then completes the boil without being told how.</li>
+    <li>Udon has the new clay models. The other eleven kitchens still use the earlier renders.</li>
+    <li>The clay images were generated with an image model and colour-matched afterwards. They should be remodelled in Blender before release.</li>
+  </ul>
+  <a class="btn go" href="../#table">Open the app</a>
+</section>
+</main>
+
+<footer class="foot">
+  <a class="name" href="https://aidanmdesign.xyz/">Aidan McFarlane</a>
+  <nav aria-label="Footer"><a href="https://aidanmdesign.xyz/">Portfolio</a><a href="../../licenses/regional-photographs.html">Photo credits</a><a href="../#table">Ajimi</a></nav>
+</footer>
+</body>
+</html>
