@@ -1,0 +1,11 @@
+/* The water surface sits inside the inner lip of the illustrated earthenware. */
+ajimi-boil {position:absolute;inset:0;display:block;z-index:4;pointer-events:none}
+ajimi-boil canvas {width:100%;height:100%;display:block}
+.recipe-stage .worktop[data-tech-key=boil] .game-vessel:has(ajimi-boil[data-painted]) :is(.pot-contents,.tech-effect){visibility:hidden}
+.recipe-stage .worktop[data-tech-key=boil] .game-vessel{filter:drop-shadow(0 7px 5px color-mix(in srgb,var(--recipe-counter) 37%,transparent))}
+@media(max-width:760px){
+ .recipe-stage.kitchen-stage .worktop[data-tech-key=boil] .pot-zone{height:clamp(190px,53vw,255px)}
+}
+@media(min-width:761px){
+ .recipe-stage .worktop[data-tech-key=boil]{min-height:clamp(465px,44vw,510px)}
+}

@@ -1,0 +1,182 @@
+/* Ajimi studio materials. Colour is carried by the earthenware and its surface;
+   the controls use one frosted finish and the same upper-left light. */
+@font-face {
+  font-family:"Atkinson Hyperlegible Next";font-style:normal;font-weight:200 800;
+  font-display:swap;src:url("fonts/atkinson-next.woff2") format("woff2");
+}
+:root {
+  --body:"Atkinson Hyperlegible Next","BIZ UDPGothic",sans-serif;
+  --clay-ink:#173f36;--clay-muted:#435d51;--clay-dark:#244d43;
+  --clay-apricot:#f5aa7b;--clay-mist:#e3ebe3;--clay-petal:#efdfdb;
+  --clay-grain:url("assets/clay-grain.png");--wheel:url("assets/celadon-wheel.webp");
+  --light-edge:inset 0 1.5px 1px #ffffffb3,inset 0 -1px 1px #34514426;
+  --resting:0 12px 28px -18px #263f3770,0 3px 7px -5px #3442385c;
+  --glass:linear-gradient(143deg,#fffffff2 3%,#ffffffa8 58%,#f5f7f1bb);
+  --press-shadow:inset 0 1px 1px #ffffffa8,inset 0 -2px 1px #6c655c22,0 3px 5px -4px #243c3299;
+  --petrol:var(--clay-ink);--study-ink:var(--clay-ink);
+}
+body {font:400 1.0625rem/1.48 var(--body);color:var(--clay-ink)}
+[lang=ja] {font-family:"BIZ UDPGothic",sans-serif}
+button,input,summary,select {font-family:var(--body)}
+button:focus-visible,a:focus-visible,summary:focus-visible {outline:3px solid #126370;outline-offset:3px}
+.mast nav,.mast .coach-button {box-shadow:var(--light-edge),var(--resting)}
+body>header .mast nav {background:linear-gradient(150deg,#fafcf9,#e5eae5);padding:3px}
+.mast nav a {font-size:.98rem;min-height:44px;padding:7px 15px}
+.mast .coach-button {min-height:44px;min-width:44px}
+.menu-band,.menu-band .all-dishes,.study-shortcut,.study-top .lesson-back,.lesson-bar>a {font-size:.94rem;min-height:44px}
+.menu-band {margin:8px 0 12px;gap:10px}
+.menu-band .all-dishes,.study-top .lesson-back,.study-shortcut,.lesson-bar>a,.recipe-rail li,.study-tab {
+  background:linear-gradient(145deg,#f7f9f5,#e1e9e0);color:var(--clay-ink);box-shadow:var(--press-shadow)
+}
+.dish-poster,.dish-poster[data-region=fukuoka] {
+  --stage-hi:#4b7062;--stage-lo:#294d42;
+  position:relative;display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1fr);
+  align-items:center;min-height:clamp(370px,31vw,480px);padding:clamp(18px,2.6vw,38px);
+  color:var(--clay-ink);background-color:var(--stage-lo);background-image:var(--clay-grain),radial-gradient(ellipse at 20% 5%,var(--stage-hi),var(--stage-lo) 90%);
+  box-shadow:var(--light-edge),var(--resting);border-radius:28px
+}
+.dish-poster[data-region=fukuoka],.dish-poster[data-region=kyoto] {--stage-hi:#c9aca3;--stage-lo:#936f67}
+.dish-poster .paper-arc {display:none}
+.dish-poster .poster-art,.dish-poster[data-region=fukuoka] .poster-art {
+  position:relative;inset:auto;width:100%;max-width:440px;aspect-ratio:1;grid-column:2;grid-row:1;
+  justify-self:center;display:grid;place-items:center;transform:none;clip-path:none
+}
+.table-stage:before,.verb-miniature:before {
+  content:"";position:absolute;inset:1%;background:var(--wheel) center/contain no-repeat;
+  filter:drop-shadow(3px 8px 5px #152e2840);pointer-events:none
+}
+.table-stage .turn-disc {position:relative;inset:auto;grid-area:1/1;display:grid;place-items:center;width:85%}
+.table-stage .turn-disc.side-disc {position:relative;inset:auto}
+.table-stage .food-plate {width:100%;height:auto;filter:drop-shadow(1px 3px 2px #17282066)}
+.dish-poster .poster-copy.ticket-text {
+  position:relative;inset:auto;grid-column:1;grid-row:1;z-index:2;width:100%;min-height:0;max-width:520px;
+  align-self:center;display:flex;align-items:flex-start;gap:12px;padding:clamp(18px,2vw,32px);margin:0;
+  color:var(--clay-ink);background:var(--glass);box-shadow:var(--light-edge),0 10px 20px -14px #152d2877;
+  border-radius:22px;backdrop-filter:blur(12px)
+}
+.dish-poster .poster-copy .region-name {color:var(--clay-muted);font:700 1rem/1.2 var(--body);margin:0}
+.dish-poster .poster-copy h1,.dish-poster .poster-copy h1.long-name,.dish-poster .poster-copy h1.single-long {
+  font:730 clamp(2.1rem,3.7vw,4.1rem)/.99 var(--body);letter-spacing:-.045em;
+  color:var(--clay-ink);max-width:100%;width:100%;margin:0;text-wrap:balance;overflow-wrap:break-word
+}
+.dish-poster .poster-copy .poster-focus {font:450 1.1rem/1.4 var(--body);max-width:34ch;width:100%;margin:0;color:#324d42}
+.menu-actions {display:flex;flex-wrap:wrap;gap:7px 13px;align-items:center}
+.poster-copy .menu-actions .cta,.menu-shortcut,.study-next-row .study-next {font:680 1rem/1.2 var(--body);min-height:46px;padding:10px 16px}
+.poster-copy .menu-actions .cta {background:var(--clay-ink);color:#fff;border-radius:14px;box-shadow:var(--press-shadow)}
+.menu-shortcut {color:var(--clay-ink);background:transparent;padding-inline:0;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#8d9e91}
+.dish-poster .table-controls {bottom:12px;right:15px;color:var(--clay-ink);background:#f6f7ecbd;backdrop-filter:blur(12px);box-shadow:var(--press-shadow);padding:3px;gap:6px}
+.table-controls button {width:44px;height:44px;background:#ffffff7a}
+.table-controls>span {font-size:.92rem}.turn-hint {display:none}
+.other-poster,.ear-panel,.study-poster,.study-panel,.recipe-stage .worktop,.recipe-stage .recipe-tray,.quiz .activity-aside,.quiz .quiz-paper,.dish-tile,.recipe-book .passport,.recipe-book .book-words {
+  background-image:var(--clay-grain),linear-gradient(142deg,#ffffff23,#ffffff00 49%,#183a2f0d);box-shadow:var(--light-edge),var(--resting)
+}
+.other-poster {background-color:#ead7ce;color:var(--clay-ink)}.other-poster::before {opacity:.22}
+.other-poster .other-top {font-size:.98rem}
+.ear-panel {background-color:#e0e9df}.ear-label p,.sample-reading,.ear-tools button {font-size:1rem}
+.ear-panel .ear-choices .ear-answer,.ear-tools .listen-sample {min-height:44px;font:650 .98rem/1.28 var(--body);box-shadow:var(--press-shadow)}
+.ear-panel .ear-choices .ear-answer {background:var(--glass)}
+.study-shell,.study-work {gap:14px}.study-poster {background-color:#284d42}
+.study-poster:before {display:none}
+.study-name p {font-size:1rem}.study-name>span {font-size:1.05rem}
+.study-photo:before {content:"";position:absolute;inset:-6%;z-index:-1;background:var(--wheel) center/contain no-repeat;filter:drop-shadow(2px 5px 4px #162a1e66)}
+.study-photo .food-plate {filter:drop-shadow(1px 2px 2px #192e244d)}
+.study-name h1,.quiz .quiz-paper h1,.recipe-stage .worktop-label h1,.recipe-taste .taste-note h1 {font-family:var(--body);font-weight:730;letter-spacing:-.045em;text-wrap:balance}
+.study-tab {min-height:48px;font:650 1rem/1.25 var(--body);gap:7px}.study-tab>span {width:21px;height:21px;font:650 .81rem/1 var(--body)}
+.study-tab[aria-current] {background:#274e43;color:#fff}
+.study-tab[aria-current]>span {color:#203a2c;background:#f6c89d}
+.study-panel {background-color:#dce6da}.study-panel.stage-1 {background-color:#e9d9d4}.study-panel.stage-2 {background-color:#eee5d5}
+.study-panel h2,.recipe-tray h2,.ear-label h2,.library-heading h1 {font:710 clamp(1.7rem,2.8vw,2.8rem)/1.08 var(--body);letter-spacing:-.037em}
+.verb-field {position:relative;min-height:125px;justify-content:space-between;gap:8px;margin:0 0 12px}
+.verb-miniature {flex:0 1 125px;min-width:74px;aspect-ratio:1;position:relative;display:grid;place-items:center}
+.verb-miniature:before {inset:5%;filter:drop-shadow(2px 4px 3px #213d2f44)}
+.verb-miniature .ingredient-mini {position:relative;display:grid;place-items:center;width:78%;height:78%}
+.verb-miniature img {width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 2px #28362c33)}
+.study-chip {font-size:1.3rem;min-height:46px;box-shadow:var(--press-shadow);background-color:#ffd3a0}
+.study-chip.large {z-index:1;flex:0 1 auto;min-width:0;padding:14px 17px;background-image:var(--clay-grain),linear-gradient(142deg,#ffffff35,transparent)}
+.study-chip.large mark {font-size:clamp(2.25rem,4.45vw,4rem);line-height:1.22;overflow-wrap:anywhere}
+.study-chip .reveal-hint {font:650 .9rem/1.3 var(--body)}.study-chip.revealed {background-color:var(--clay-dark)}
+.word-detail,.phrase-field {background:var(--glass);box-shadow:var(--light-edge);border-radius:16px}
+.word-detail {padding:16px 18px}.word-detail .word-reading,.use-note,.study-panel .use-note,.phrase-field>p,.study-panel .phrase-field>p,.study-next-row>span {font-size:1.05rem;line-height:1.5}
+.study-panel .word-detail h3 {font:700 1.55rem/1.2 var(--body);letter-spacing:-.02em}
+.study-panel .word-tools {gap:6px 8px}
+.study-panel :is(.study-save,.study-minor,.sound,.mini-answer),.saved-row .study-save,.recipe-stage .tech-word .sound,.recipe-stage .tech-word .study-save {
+  font:650 .98rem/1.25 var(--body);min-height:44px;padding:9px 13px;box-shadow:var(--press-shadow)
+}
+.study-panel .study-minor {background:#ffffff87}.study-panel .mini-answers .mini-answer {background:var(--glass)}.study-panel .mini-answer.correct {background:#bedaaf}.study-panel .mini-answer.incorrect {background:#edc8bf}
+.study-panel .pantry-group>h3,.study-panel .mini-check [role=status] {font-size:1rem}
+.lesson-bar {min-width:0}.lesson-bar ol li {font-size:.93rem;line-height:1.25}
+.quiz .activity-aside {background-color:#31584b}.quiz .activity-aside>span:last-child,.progress-track+span {font-size:1rem}
+.quiz .quiz-paper {background-color:#eddfda;color:var(--clay-ink)}.quiz .quiz-paper h1 {font-size:clamp(1.9rem,3.4vw,3rem);line-height:1.1}
+.quiz .quiz-word {background:var(--glass);box-shadow:var(--light-edge)}
+.quiz .answers button,.quiz .quiz-paper .sound,.quiz .quiz-skip,.quiz .feedback button {font:650 1rem/1.35 var(--body);min-height:46px}
+.quiz .answers .answer {background:var(--glass);box-shadow:var(--press-shadow);text-align:left}.quiz .answers .answer.right {background:#c3d8b3}.quiz .answers .answer.wrong {background:#f0c3b9}
+.recipe-stage.kitchen-stage {background:none;box-shadow:none;gap:12px;overflow:visible}
+.recipe-stage .worktop,.recipe-stage .recipe-tray {border-radius:24px}
+.recipe-stage .worktop {background-color:#32584c}.recipe-stage .recipe-tray {background-color:#e9ddd7}
+.recipe-stage .worktop-label h1 {font-size:clamp(1.85rem,3.3vw,3.4rem)}
+.recipe-stage .ingredient-total,.recipe-stage .board-caption,.recipe-assists summary {font:650 .94rem/1.35 var(--body)}
+.recipe-stage .recipe-tray>.action-hint,.recipe-stage .tech-guidance,.recipe-stage .tech-gesture,.recipe-assists p {font-size:1.06rem;line-height:1.45}
+.recipe-stage .recipe-tray :is(.sound,.cta,.quiet,.secondary,.study-save) {min-height:45px;font-size:1rem}
+.recipe-stage .recipe-tray :is(.tile,.bottle),.recipe-stage .recipe-tray .tile[aria-pressed=true] {min-height:70px;gap:7px;padding:9px 11px;background:var(--glass);box-shadow:var(--press-shadow)}
+.recipe-stage .recipe-tray .tile[aria-pressed=true] {background:#ffe1b4}.recipe-stage .recipe-tray .tile:disabled {background:#d1dfd0}
+.recipe-stage .recipe-tray .pantry-label strong {font-size:1.12rem;line-height:1.35;letter-spacing:0}
+.recipe-stage .recipe-tray .pantry-label small {font-size:.96rem;line-height:1.2;color:#3e5148}
+.recipe-stage .recipe-tray .tile .ingredient-mini,.recipe-stage .recipe-tray .bottle .bottle-ink {width:clamp(37px,4vw,58px);height:clamp(37px,4vw,58px)}
+.recipe-stage .tech-word strong {font-size:clamp(1.7rem,2.5vw,2.5rem)}
+.recipe-book .word-row .book-meaning,.recipe-book .book-meaning p,.recipe-stage .tech-progress,.recipe-diet summary {font-size:1rem}
+body>footer.house-footer {box-shadow:var(--resting);background-color:#213f37;background-image:var(--clay-grain)}
+.house-footer nav a,.house-footer .footer-credit a,.footer-lockup p,.house-footer small {font-size:.92rem;line-height:1.45}.house-footer nav strong {font-size:1rem}
+@media(max-width:760px) {
+  :root {--edge:clamp(13px,3.65vw,25px)}
+  .mast {gap:7px}.mast nav {margin-inline:auto}.mast nav a {padding-inline:11px}
+  .dish-poster,.dish-poster[data-region=fukuoka] {display:flex;flex-direction:column;align-items:stretch;gap:5px;min-height:0;padding:12px;border-radius:23px}
+  .dish-poster .poster-art,.dish-poster[data-region=fukuoka] .poster-art {width:clamp(170px,49vw,245px);margin:0 auto}
+  .dish-poster .poster-copy.ticket-text {width:100%;max-width:none;padding:16px 18px;gap:7px;border-radius:15px}
+  .dish-poster .poster-copy h1,.dish-poster .poster-copy h1.long-name,.dish-poster .poster-copy h1.single-long {font-size:clamp(1.94rem,7.9vw,2.65rem);text-wrap:initial;max-width:none}
+  .dish-poster .poster-copy .poster-focus {font-size:1.06rem;line-height:1.35;max-width:42ch}.menu-actions {margin-top:5px}
+  .dish-poster .table-controls {position:absolute;top:15px;right:13px;left:13px;bottom:auto;display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:0;padding:0;background:none;backdrop-filter:none;box-shadow:none;pointer-events:none}
+  .table-controls>span {grid-column:2;grid-row:1;font-size:.86rem;justify-self:start;margin-left:7px;background:#f4f6eadd;border-radius:30px;padding:3px 9px}
+  .table-controls .turn-prev,.table-controls .turn-next {grid-row:1;width:44px;height:44px;background:#f5f6eddc;pointer-events:auto;box-shadow:var(--press-shadow)}
+  .table-controls .turn-prev {grid-column:1}.table-controls .turn-next {grid-column:3}
+  .study-shell {gap:12px}.study-work {gap:9px}.study-poster {min-height:116px}.study-name h1 {font-size:clamp(1.75rem,5.8vw,2.25rem)}
+  .study-photo {width:28%;right:4%}.study-name {width:68%}
+  .study-panel {padding:19px 17px}.study-panel h2 {font-size:1.72rem;margin-bottom:10px}
+  .verb-field {min-height:96px}.verb-miniature {max-width:101px}
+  .study-top {margin:5px 0 10px}.study-top .study-shortcut,.study-top .lesson-back {padding-inline:12px;font-size:.94rem}
+  .quiz .quiz-paper {padding:20px}.quiz .activity-aside .quiz-dish {font:700 1.55rem/1.1 var(--body)}
+  .recipe-stage.kitchen-stage {gap:9px}.recipe-stage .recipe-tray,.recipe-stage .worktop {border-radius:19px}
+  .recipe-stage.kitchen-stage .worktop .pot-zone {height:clamp(180px,48vw,260px)}
+  .recipe-tray .tiles,.recipe-tray .bottles {gap:7px}
+  .house-footer nav a {padding-block:3px}
+}
+@media(max-width:450px) {
+  .menu-band {margin-top:2px}.study-tab {gap:4px}.study-tab>span {width:18px;height:18px}
+  .ear-tools {flex-wrap:wrap}.ear-choices {flex-wrap:wrap}
+  .recipe-stage .recipe-tray :is(.tile,.bottle){padding:8px;gap:5px}
+  .recipe-stage .recipe-tray .tile .ingredient-mini,.recipe-stage .recipe-tray .bottle .bottle-ink{width:37px;height:40px}
+  body>footer.house-footer {padding:18px 15px}
+}
+@media(max-width:350px) {
+  .mast nav a {font-size:.91rem;padding-inline:8px}.mast .brand {gap:4px}
+  .study-panel .word-tools button {font-size:.95rem!important}.study-tab {font-size:.93rem}
+  .recipe-tray .tiles,.recipe-tray .bottles {grid-template-columns:minmax(0,1fr)}
+}
+@media(prefers-reduced-transparency:reduce) {
+  :root {--glass:#f5f5ec}.dish-poster .poster-copy.ticket-text,.table-controls {backdrop-filter:none}
+}
+/* The label sits partly over the wheel, so the scene is visible through the frost. */
+.dish-poster .poster-copy.ticket-text {
+  background:linear-gradient(137deg,#ffffffdf 0%,#f3f8efc9 34%,#e9f0e59c 77%,#ffffffbf);
+  box-shadow:inset 0 1.5px 1px #ffffffeb,inset 1px 0 1px #ffffff91,inset -1px -1px 1px #ffffff4a,0 7px 14px -9px #142d25c7;
+  backdrop-filter:blur(9px) saturate(1.12)
+}
+.dish-poster,.dish-poster[data-region=fukuoka] {
+  background-image:var(--clay-grain),radial-gradient(ellipse at 25% -17%,#ffffff22,transparent 62%),linear-gradient(145deg,var(--stage-hi),var(--stage-lo) 88%)
+}
+@media(max-width:760px) {
+  .dish-poster .poster-art,.dish-poster[data-region=fukuoka] .poster-art {width:clamp(194px,59vw,282px);margin:1px auto -43px;transform:translateX(3.5%)}
+  .dish-poster .poster-copy.ticket-text {backdrop-filter:blur(6px) saturate(1.1)}
+}
+@media(prefers-reduced-transparency:reduce) {
+  .dish-poster .poster-copy.ticket-text {background:#eff1e8;backdrop-filter:none}
+}

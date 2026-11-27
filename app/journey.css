@@ -1,0 +1,120 @@
+/* Hallmark: playful | custom: Ajimi | signature: printed dish menu and three cooking stages */
+/* A single colour field holds each decision. Keep dividing strokes off surfaces and reserve a clear focus ring for interactive controls. */
+:root{
+  --ground:#c7d6be;--ground-deep:#a6c4ad;--leaf:#a9cdb7;--lilypad:#d6e4ae;
+  --ink-field:#123f39;--ink-light:#24574e;--blossom:#edb6c3;--melon:#f4c0a1;
+  --apricot:#ff976a;--deep-rose:#4c2838;--entry-peach:#e7ac89;--blue-mint:#a4cfca;
+  --paper:var(--ground);--pale:#deebcf;--wash:#bdd0b4;--on:#fff3d9;
+}
+body{background:var(--ground)}
+.mast{border:0}.mast nav{background:var(--ground-deep);border:0}.coach-button{background:var(--leaf);border:0}.brand b,footer span{display:none}
+footer{border:0;margin-top:24px}footer a{font-size:12px}
+.menu-band{margin-top:13px}.menu-band .all-dishes,.lesson-back,.lesson-bar>a{display:inline-flex;align-items:center;gap:8px;background:var(--ink-field);color:var(--on);border-radius:30px;padding:9px 15px;text-decoration:none;font:700 13px/1.4 var(--body)}
+.paper-arc::before,.paper-arc::after,.other-poster::before{border:0;box-shadow:none}
+.dish-poster,.other-poster,.ear-panel,.sound-mark,.ear-panel button,.sample-reading,.poster-copy .cta{border:0;box-shadow:none}
+.dish-poster[data-region=fukuoka]{background:var(--blossom)}
+.poster-copy h1{max-width:6.7ch;overflow-wrap:normal;text-wrap:initial}
+.poster-copy h1.long-name{font-size:clamp(38px,4.2vw,62px);max-width:12ch;overflow-wrap:anywhere}
+.poster-print{display:none}.other-top svg{border:0;background:var(--rose-light)}
+.other-poster[data-region=hokkaido] .other-top svg{background:var(--lilypad)}
+.ear-panel{background:var(--leaf)}.sound-mark,.ear-panel .ear-answer{background:var(--lilypad)}.ear-panel .ear-answer.missed{background:var(--blossom)}
+.ear-panel button:hover{filter:brightness(.95)}
+.ear-tools{margin-left:auto}
+.library-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:24px 0 18px}.library-heading h1{font-size:clamp(32px,5vw,62px)}.library-heading span{font-weight:700;font-size:13px}
+.dish-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.dish-tile{position:relative;display:grid;grid-template-rows:auto 1fr auto auto;gap:8px;isolation:isolate;overflow:hidden;border-radius:22px;padding:18px 20px 17px;background:var(--tone);color:var(--tone-ink,var(--ink-field));text-decoration:none}
+.tone-0{--tone:var(--ink-field);--tone-ink:var(--on);--ring:var(--ink-light)}.tone-1{--tone:var(--blossom);--ring:var(--rose-light)}.tone-2{--tone:var(--melon);--ring:var(--apricot)}.tone-3{--tone:var(--leaf);--ring:var(--lilypad)}.tone-4{--tone:var(--blue-mint);--ring:var(--leaf)}
+.library-art{position:relative;display:grid;place-items:center;align-self:center;justify-self:center;width:68%;max-width:185px;aspect-ratio:1;margin:4px 0}
+.library-art:before{position:absolute;content:"";z-index:-1;inset:10% -19% 7% 19%;background:var(--ring);border-radius:50%}
+.library-art .food-plate{height:100%;object-fit:contain;filter:drop-shadow(1px 5px 4px var(--card-shadow));transition:transform .18s}
+.dish-tile:hover .food-plate{transform:translateY(-3px) rotate(-3deg)}
+.library-region,.library-action{font:700 12px/1.4 var(--body)}.library-action{display:flex;align-items:center;justify-content:space-between}.dish-tile strong{font:400 clamp(18px,2vw,29px)/1.18 var(--display);letter-spacing:-.04em}
+.lesson-back,.lesson-bar{margin:12px 0 16px}.lesson-back,.lesson-bar>a{color:var(--ink-field);background:var(--ground-deep)}
+.lesson-bar{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.lesson-bar ol{display:flex;gap:4px;align-items:center;background:transparent}
+.lesson-bar li,.lesson-bar li[aria-current]{margin:0;padding:0;border:0}.lesson-bar li>a,.lesson-bar li>span{display:inline-flex;align-items:center;gap:6px;background:var(--ground-deep);color:var(--ink-field);border:0;border-radius:24px;text-decoration:none;padding:8px 14px;min-height:36px;font:700 12px/1.1 var(--body)}
+.lesson-bar li b{color:inherit;background:transparent;border:0;padding:0;border-radius:0;font:inherit;opacity:.75;display:inline}
+.lesson-bar li[aria-current]>span{background:var(--ink-field);color:var(--on)}.lesson-bar li.past>a{background:var(--leaf)}
+.recipe-entry{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.82fr);gap:14px;align-items:stretch}
+.entry-poster{border-radius:28px;position:relative;isolation:isolate;overflow:hidden;min-height:380px;display:flex;align-items:end;background:var(--ink-field);color:var(--on)}
+.entry-poster:before{content:"";position:absolute;z-index:-1;background:var(--ink-light);height:147%;aspect-ratio:1;right:-29%;top:-68%;border-radius:50%}
+.entry-image{position:absolute;right:-4%;top:-14%;height:94%;width:65%;display:flex;align-items:center;justify-content:center}.entry-image img{height:100%;width:100%;object-fit:contain;transform:rotate(9deg);filter:drop-shadow(4px 11px 6px var(--food-shadow))}
+.entry-name{position:relative;z-index:1;max-width:65%;padding:30px clamp(20px,3vw,42px)}.entry-name p{font:700 14px/1.5 var(--body);margin-bottom:6px}
+.entry-name h1{font-size:clamp(46px,5.05vw,78px);line-height:1.02;letter-spacing:-.05em;overflow-wrap:normal;text-wrap:balance}
+.entry-poster[data-region=fukuoka],.entry-poster[data-region=miyagi],.entry-poster[data-region=kyoto]{color:var(--deep-rose);background:var(--blossom)}
+.entry-poster[data-region=fukuoka]:before,.entry-poster[data-region=miyagi]:before,.entry-poster[data-region=kyoto]:before{background:var(--rose-light)}
+.entry-steps{display:grid;grid-template-rows:1.3fr 1fr;gap:12px}
+.entry-quiz,.entry-recipe{border-radius:26px;padding:clamp(19px,2.4vw,34px)}.entry-quiz{background:var(--apricot)}.entry-recipe{background:var(--leaf)}
+.entry-step{display:flex;gap:10px;align-items:center}.entry-step>span{display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:var(--ink-field);color:var(--on);font-weight:700}
+.entry-step h2{font-size:clamp(24px,2.6vw,39px);line-height:1.1}.entry-steps p{font-size:14px;line-height:1.55;max-width:42ch;margin:12px 0 0}
+.entry-quiz .cta,.complete-quiz .cta{background:var(--ink-field);color:var(--on);border:0;box-shadow:none;border-radius:24px;min-height:44px;padding:10px 19px;font-weight:700;margin-top:16px}
+.lesson-glossary{grid-column:1/-1;background:var(--lilypad);border-radius:19px;padding:0 22px}
+.lesson-glossary summary{display:flex;align-items:center;justify-content:space-between;padding:16px 0;cursor:pointer;font-weight:700;list-style:none}.lesson-glossary summary::-webkit-details-marker{display:none}.lesson-glossary[open] summary>span{transform:rotate(45deg)}
+.lesson-glossary .word-stack{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;padding:0 0 16px}
+.lesson-glossary .word-row{background:var(--leaf);border:0;border-radius:14px;padding:12px;grid-template-columns:minmax(0,1fr) auto auto;gap:6px}.lesson-glossary .word-row .circle{border:0;background:var(--lilypad)}
+.activity.quiz{max-width:none;border:0;background:transparent;gap:12px;grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr)}
+.quiz .activity-aside,.quiz .quiz-paper{border:0;box-shadow:none;border-radius:26px}
+.quiz .activity-aside{background:var(--ink-field);padding:clamp(22px,3vw,40px)}
+.quiz .activity-aside .quiz-dish{font:400 clamp(24px,3vw,47px)/1.1 var(--display);letter-spacing:-.04em;color:var(--on);max-width:12ch}
+.quiz .quiz-guide{width:min(53%,142px);margin:18px 0}
+.quiz .activity-aside .progress-track{margin-top:auto}
+.quiz .quiz-paper{background:var(--blossom);color:var(--deep-rose);padding:clamp(24px,3vw,44px)}
+.quiz .quiz-paper h1{font:400 clamp(28px,3.7vw,55px)/1.09 var(--display);margin:0 0 16px;letter-spacing:-.045em;text-wrap:pretty}
+.quiz .quiz-word{background:var(--rose-light);border:0;border-radius:17px;min-height:78px;margin:0 0 10px}
+.quiz .quiz-word .sound{background:var(--blossom);border:0}.quiz .quiz-word .sound:first-child{background:var(--ink-field)}
+.quiz .answers{gap:7px}.quiz .answer{background:var(--rose-light);border:0;border-radius:15px;min-height:49px;padding:11px 17px;justify-content:space-between}.quiz .answer:hover:enabled{background:var(--melon)}
+.quiz .answer.right,.quiz .answer-feedback.yes{background:var(--lilypad)}.quiz .answer.wrong,.quiz .answer-feedback.no{background:var(--apricot)}
+.quiz .answer-feedback{border:0;box-shadow:none;gap:10px}.quiz .answer-feedback .cta{border-radius:24px;min-height:40px}
+.complete-quiz,.empty-sheet{background:var(--leaf);border:0;border-radius:26px;padding:32px}
+body[data-screen=about] .about{background:var(--lilypad);padding:clamp(18px,3vw,42px);border-radius:24px}
+#coach{background:var(--leaf);border-radius:24px}#coach :is(.chip,input){border:0;background:var(--lilypad)}#coach .dialog-head{border:0}
+@media(max-width:950px){.dish-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.entry-name h1{font-size:clamp(37px,5.2vw,55px)}.lesson-glossary .word-stack{grid-template-columns:repeat(2,minmax(0,1fr))}.entry-name{padding:25px}.entry-poster{min-height:350px}}
+@media(max-width:700px){
+ .dish-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.dish-tile{border-radius:18px;padding:13px}.library-art{width:74%;margin:4px auto}.library-heading{margin:18px 0 12px}.library-heading span{font-size:11px}
+ .recipe-entry{grid-template-columns:minmax(0,1fr);gap:10px}.entry-poster{min-height:185px;border-radius:23px}.entry-image{width:50%;height:122%;top:-15%;right:-2%}.entry-name{max-width:54%;padding:19px}.entry-name h1{font-size:clamp(32px,6.5vw,45px)}.entry-name p{font-size:12px}
+ .entry-steps{grid-template-rows:auto;grid-template-columns:1.1fr 1fr;gap:8px}.entry-quiz,.entry-recipe{border-radius:20px;padding:16px}.entry-step{gap:7px}.entry-step>span{height:22px;width:22px;font-size:12px}.entry-step h2{font-size:23px}.entry-steps p{font-size:12px;line-height:1.5;margin-top:10px}.entry-quiz .cta{font-size:13px;padding:9px 13px}
+ .lesson-back,.lesson-bar{margin:8px 0 12px}.lesson-bar li>a,.lesson-bar li>span{gap:4px;padding:7px 9px;font-size:11px}
+ .activity.quiz{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}.quiz .activity-aside{display:grid;grid-template-columns:minmax(0,1fr) 57px;grid-template-rows:auto auto;align-items:center;gap:4px 12px;padding:12px 16px;border-radius:19px}
+ .quiz .activity-aside .quiz-dish{font-size:19px;max-width:none;grid-column:1}.quiz .quiz-guide{display:grid;width:50px;height:50px;margin:0;grid-column:2;grid-row:1/4}
+ .quiz .activity-aside .progress-track{grid-column:1;grid-row:2;margin:0;width:115px}.quiz .activity-aside>span:last-child{grid-column:1;grid-row:3;font-size:11px}.quiz .quiz-paper{padding:18px;border-radius:20px}.quiz .quiz-paper h1{font-size:clamp(25px,6.8vw,35px);margin-bottom:14px}
+ .quiz .quiz-word{padding:12px;min-height:72px}.quiz .answer{min-height:44px}
+ .ear-tools{margin-left:0}.menu-band .all-dishes{font-size:12px;padding:7px 11px}
+}
+@media(max-width:520px){.poster-copy.ticket-text{display:flex;justify-content:flex-start;align-items:flex-start;min-height:303px}
+ .dish-poster{min-height:303px}.poster-copy h1{width:54%;max-width:6ch;margin:17px 0 9px}.dish-poster[data-region=fukuoka] .poster-copy h1{margin-top:16px}.poster-copy h1.long-name{max-width:100%;width:50%;font-size:clamp(25px,7.6vw,38px)}
+ .poster-copy .poster-focus{align-self:start;margin: auto 0 11px;max-width:32ch}.poster-art{top:9px;width:47%}.dish-poster[data-region=fukuoka] .poster-art{width:45%}
+ .lesson-glossary .word-stack{grid-template-columns:minmax(0,1fr)}.entry-quiz .cta{gap:6px}.ear-panel{border-radius:18px}.library-action{font-size:11px}
+}
+@media(max-width:360px){.entry-poster{min-height:166px}.entry-steps{grid-template-columns:minmax(0,1fr)}.entry-recipe{display:flex;align-items:center;gap:12px}.entry-recipe p{margin:0}.entry-step h2{font-size:20px}.lesson-bar li>a,.lesson-bar li>span{padding:7px 6px}.lesson-bar>a{font-size:11px;padding:8px}.quiz .quiz-word .listen-pair{gap:2px}.quiz .quiz-word .sound{padding:7px}}
+@media(prefers-reduced-motion:reduce){.dish-tile .food-plate{transition:none}}
+.dish-poster{touch-action:pan-y pinch-zoom}
+.table-stage{pointer-events:none;clip-path:inset(-11% -17% -16% -8%)}.turn-disc{position:relative;width:100%;transform-origin:50% 50%}
+.side-disc{position:absolute;inset:0}.turning .turn-disc{will-change:transform,opacity}.table-stage .food-plate{animation:none}
+.table-controls{position:absolute;bottom:14px;right:16px;z-index:3;display:flex;gap:7px;align-items:center;background:var(--ink-field);color:var(--on);padding:4px;border-radius:30px}
+.table-controls>span{font-size:11px;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.table-controls button{display:grid;place-items:center;width:37px;height:37px;border:0;border-radius:50%;color:var(--ink-field);background:var(--leaf)}
+.table-controls button:hover{background:var(--lilypad)}.turn-prev svg{transform:rotate(180deg)}.turn-hint{margin-right:5px}
+.entry-steps h2{font:400 clamp(22px,2.5vw,37px)/1.1 var(--display);letter-spacing:-.04em}
+.entry-recipe .recipe-shortcut,.quiz .quiz-skip{display:inline-flex;gap:10px;align-items:center;border:0;border-radius:25px;background:var(--ink-field);color:var(--on);font-weight:700;font-size:13px;min-height:42px;padding:9px 17px;margin-top:14px}
+.quiz .quiz-skip{background:var(--rose-light);color:var(--deep-rose);margin-top:12px;min-height:36px}
+.glossary-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px}.glossary-top h2{font-size:clamp(18px,2.2vw,28px);margin:0;letter-spacing:-.035em}
+.highlight-word{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:13px;border:0;padding:6px 10px;border-radius:12px;background:var(--leaf);color:var(--ink-field)}
+.highlight-word mark{padding:1px 5px;background:var(--apricot);border-radius:4px;color:var(--ink-field);font:700 17px var(--body)}
+.lesson-glossary summary{padding:11px 0;font-size:13px}.entry-steps p{margin-top:8px}
+.quiz .activity-aside .progress-track+.quiz-skip{display:none}
+@media(max-width:760px){.turn-hint{display:none}.table-controls{right:10px;bottom:11px;gap:6px}.table-controls button{width:34px;height:34px}
+.entry-steps h2{font-size:clamp(18px,4.2vw,25px)}.entry-quiz .cta,.entry-recipe .recipe-shortcut{font-size:12px;padding:9px 11px;gap:6px;min-height:40px}
+.quiz .activity-aside{grid-template-rows:auto auto auto}.quiz .activity-aside .quiz-dish{grid-row:1;align-self:end}
+}
+@media(max-width:520px){.dish-poster .poster-copy{padding-bottom:64px}.table-controls{background:var(--ink-field)}.turn-hint{display:inline}.dish-poster{min-height:335px}.poster-copy.ticket-text{min-height:335px}.poster-copy .poster-focus{width:90%}
+.glossary-top{align-items:flex-start;flex-direction:column;gap:8px}.entry-steps{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.entry-recipe{display:block}.entry-recipe p{margin-top:8px}
+}
+@media(max-width:360px){.turn-hint{display:none}.entry-quiz,.entry-recipe{padding:13px}.entry-name h1{font-size:29px}.entry-steps h2{font-size:18px}}
+.poster-copy h1.single-long,.entry-name h1.single-long{font-size:clamp(30px,3.35vw,53px);max-width:none;overflow-wrap:normal}
+@media(min-width:701px) and (max-width:980px){.poster-copy h1.single-long{font-size:clamp(24px,3.1vw,34px)}}
+@media(max-width:520px){.poster-copy h1.single-long{font-size:clamp(22px,5.6vw,30px)}.entry-name h1.single-long{font-size:clamp(21px,5.1vw,26px)}}
+@media(max-width:360px){.poster-copy h1{font-size:41px}}
+@media(max-width:520px){.entry-recipe .recipe-shortcut,.entry-quiz .cta{white-space:nowrap}.entry-recipe .recipe-shortcut svg,.entry-quiz .cta svg{width:14px;flex:none}}
+@media(max-width:370px){.entry-recipe .recipe-shortcut svg{display:none}}
+.credits-page{padding-block:24px}.credits-page h1{font-size:clamp(30px,5vw,55px)}.credits-page>p{margin:12px 0 18px}.credits-page ul{padding:0;display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr))}.credits-page li{display:grid;align-content:start;gap:5px;padding:16px;border-radius:17px;background:var(--leaf);list-style:none;font-size:13px}.credits-page li a:first-child{font-weight:700}.credits-page :focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.dish-poster,.table-controls{-webkit-user-select:none;user-select:none}

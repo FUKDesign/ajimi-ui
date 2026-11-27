@@ -1,0 +1,15 @@
+{
+  "name": "ajimi-regional-kitchens",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Learn Japanese by cooking twelve regional dishes.",
+  "author": "Aidan McFarlane",
+  "scripts": {
+    "dev": "node tools/serve.mjs",
+    "start": "node tools/serve.mjs",
+    "build": "node tools/build.mjs",
+    "preview": "node tools/serve.mjs --dist",
+    "data": "node tools/export-data.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

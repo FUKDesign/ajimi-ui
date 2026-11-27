@@ -1,0 +1,155 @@
+{
+  "en": {
+    "byline": "Independent project",
+    "deck": "Practise Japanese by cooking soup curry for a mochi in a headscarf.",
+    "overview": "Listen to an ingredient, find it on the counter and make a regional dish. A mochi in a headscarf does the tasting.",
+    "open": "Open the kitchen",
+    "coverAlt": "The menu of twelve Japanese dishes beside the Hakata mentaiko rice lesson.",
+    "premise": "From two dishes to twelve",
+    "premiseBody": "Ajimi (味見) means tasting as you cook. Sapporo soup curry and Hakata mentaiko rice were the first two dishes. Swipe the table to pick from twelve.",
+    "journey": "Inside a lesson",
+    "play": "Play recording",
+    "pause": "Pause recording",
+    "end": "Take a turn in the kitchen.",
+    "again": "Play Ajimi",
+    "back": "Back to the portfolio",
+    "listing": "A Japanese vocabulary game",
+    "role": "Product design and development",
+    "chapters": [
+      {
+        "id": "listen",
+        "media": "quiz",
+        "title": "From word to recipe",
+        "paragraphs": [
+          "In Sapporo, tap 煮込む (nikomu) to hear how to say “simmer”. Save the verb, hear it in a phrase, then pick out the ingredients you’ll use at the stove."
+        ],
+        "alt": "A learner turns the menu, saves the Japanese verb for simmer, explores the phrase and pantry, then finishes the quiz and opens the recipe."
+      },
+      {
+        "id": "cook",
+        "media": "udon",
+        "title": "Boil Sanuki udon",
+        "paragraphs": [
+          "Yuderu (ゆでる) means “to boil”. Hold the pot as the water bubbles and the noodles move, then finish the bowl with two ladles of dashi and a pour of soy sauce."
+        ],
+        "alt": "A learner saves the Japanese verb for boil, answers the quiz and holds the pot until the udon is ready to drain. Mochi tastes the seasoned noodles."
+      },
+      {
+        "id": "taste",
+        "media": "tasting",
+        "title": "Let Mochi taste it",
+        "paragraphs": [
+          "One extra pour changes Mochi’s verdict. Hear the Japanese response, turn the 3D dish and check the dietary notes."
+        ],
+        "alt": "Mochi tastes the curry. The learner turns the 3D model and reads the dietary notes."
+      }
+    ],
+    "fullSize": "View full size",
+    "sapporo": "Sapporo",
+    "hakata": "Hakata",
+    "soundOn": "Sound on",
+    "soundOff": "Sound off"
+  },
+  "ja": {
+    "byline": "自主制作",
+    "deck": "三角巾をかぶったおもち先生にスープカレーを作りながら、日本語を学ぶゲームです。",
+    "overview": "食材の名前を聞き、調理台から選んで郷土料理を作ります。味見をするのは、三角巾をかぶったおもちです。",
+    "open": "台所を開く",
+    "coverAlt": "12品の郷土料理から選ぶメニュー画面と、博多の明太子ご飯のレッスン画面。",
+    "premise": "2品から始まった12の料理",
+    "premiseBody": "名前の由来は料理中の「味見」です。札幌のスープカレーと博多の明太子ご飯から始まり、今はテーブルを指で回して12品から選べます。",
+    "journey": "レッスンの流れ",
+    "play": "操作動画を再生",
+    "pause": "操作動画を一時停止",
+    "end": "台所で試してみませんか。",
+    "again": "味見で遊ぶ",
+    "back": "制作実績に戻る",
+    "listing": "料理で学ぶ日本語ゲーム",
+    "role": "企画・デザイン・開発",
+    "chapters": [
+      {
+        "id": "listen",
+        "media": "quiz",
+        "title": "動詞からレシピへ",
+        "paragraphs": [
+          "札幌のレッスンでは、「煮込む」をタップして発音を聞けます。動詞を単語帳に保存し、短い文で使い方を確かめてから、調理に使う食材を覚えます。"
+        ],
+        "alt": "料理を選んで「煮込む」を保存し、例文と食材を確認して、クイズから調理へ進む。"
+      },
+      {
+        "id": "cook",
+        "media": "udon",
+        "title": "讃岐うどんをゆでる",
+        "paragraphs": [
+          "香川の台所で覚える動詞は「ゆでる」。鍋を長押しすると湯が泡立ち、うどんが揺れます。だしをお玉で2杯、しょうゆを1回加えて仕上げます。"
+        ],
+        "alt": "「ゆでる」を保存してクイズに答え、うどんの湯切りができるまで鍋を長押しする。味付けをして、おもち先生に味見してもらう。"
+      },
+      {
+        "id": "taste",
+        "media": "tasting",
+        "title": "おもち先生の味見",
+        "paragraphs": [
+          "しょうゆが1回多いだけで、先生の感想が変わります。日本語の感想を聞いたら、料理を3Dで回して材料やアレルギーの情報を確認できます。"
+        ],
+        "alt": "先生が味見をした後、料理の3Dモデルを回し、食材に関する注意点を読む。"
+      }
+    ],
+    "fullSize": "元のサイズで見る",
+    "sapporo": "札幌",
+    "hakata": "博多",
+    "soundOn": "音声をオン",
+    "soundOff": "音声をオフ"
+  },
+  "ko": {
+    "byline": "개인 프로젝트",
+    "deck": "머릿수건을 쓴 모치 선생님에게 수프 카레를 만들어 주면서 일본어를 익히는 게임입니다.",
+    "overview": "재료 이름을 듣고 조리대에서 찾아 일본의 향토 음식을 만듭니다. 머릿수건을 쓴 모치가 맛을 봅니다.",
+    "open": "주방 열기",
+    "coverAlt": "열두 가지 향토 요리 메뉴와 하카타 명란밥 수업 화면.",
+    "premise": "두 가지로 시작한 열두 가지 요리",
+    "premiseBody": "아지미(味見)는 요리하며 간을 보는 일입니다. 삿포로 수프 카레와 하카타 명란밥으로 시작했습니다. 이제 식탁을 밀어 돌리면 열두 가지 요리 중 하나를 고를 수 있습니다.",
+    "journey": "수업 따라가기",
+    "play": "시연 재생",
+    "pause": "시연 일시 정지",
+    "end": "직접 요리해 보세요.",
+    "again": "아지미 해 보기",
+    "back": "포트폴리오로 돌아가기",
+    "listing": "요리로 배우는 일본어 게임",
+    "role": "기획·디자인·개발",
+    "chapters": [
+      {
+        "id": "listen",
+        "media": "quiz",
+        "title": "단어에서 레시피로",
+        "paragraphs": [
+          "삿포로 수업에서는 煮込む(니코무)를 눌러 ‘푹 끓이다’의 발음을 듣습니다. 단어를 저장하고 짧은 문장에서 쓰임을 확인한 뒤 요리에 쓸 재료를 익힙니다."
+        ],
+        "alt": "메뉴를 돌려 끓인다는 동사를 저장하고, 짧은 문장과 재료를 익힌 뒤 퀴즈를 풀고 레시피를 연다."
+      },
+      {
+        "id": "cook",
+        "media": "udon",
+        "title": "사누키 우동 삶기",
+        "paragraphs": [
+          "유데루(ゆでる)는 ‘삶다’라는 뜻입니다. 냄비를 길게 누르면 물이 보글보글 끓고 면이 움직입니다. 육수 두 국자와 간장을 한 번 부어 마무리합니다."
+        ],
+        "alt": "삶는다는 일본어 동사를 저장하고 퀴즈를 푼 뒤 면이 익을 때까지 냄비를 길게 누른다. 간을 맞춘 우동을 모치가 맛본다."
+      },
+      {
+        "id": "taste",
+        "media": "tasting",
+        "title": "모치에게 맛보이기",
+        "paragraphs": [
+          "간장을 한 번 더 부으면 모치의 평가가 달라집니다. 일본어로 소감을 듣고, 음식의 3D 모형을 돌려 보거나 식이 정보를 읽을 수 있습니다."
+        ],
+        "alt": "모치가 카레를 맛본 뒤 학습자가 3D 모형을 돌려 보고 식이 정보를 읽는다."
+      }
+    ],
+    "fullSize": "원본 크기로 보기",
+    "sapporo": "삿포로",
+    "hakata": "하카타",
+    "soundOn": "소리 켜기",
+    "soundOff": "소리 끄기"
+  }
+}

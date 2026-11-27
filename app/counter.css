@@ -1,0 +1,124 @@
+/* Hallmark: playful | custom: Ajimi regional kitchens | signature: two dishes on a cut-paper menu */
+/* Critique: let a cook recognise the dish, hear a word and choose a kitchen from the first screen. */
+@font-face{font-family:"Dela Gothic One";src:url("fonts/dela.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+:root{
+ --paper:#f8f4e9;--pale:#fffcf3;--ink:#103d39;--on:#fff7e7;--blue:#204d50;--red:#9b361d;--rule:#c8c8b8;--mute:#4e635c;--pink:#f2b9c7;--wash:#eceadc;
+ --orange:#ff8554;--salmon:#ffac85;--mint:#acd2bb;--pistachio:#d9e6aa;--petrol:#103d39;--pine:#155247;--coral:#ff9c78;--rose:#f2b9c7;--rose-ink:#46232f;--rose-light:#f7cbd2;
+ --card-shadow:#193b301b;--food-shadow:#001d2580;--line-soft:#103d392c;--display:"Dela Gothic One","BIZ UDPGothic",sans-serif;
+ --measure:1420px;--edge:clamp(16px,4.4vw,68px);--focus:#af400e;
+}
+h1,h2,h3,.brand span{font-family:var(--display);font-weight:400;letter-spacing:-.045em}
+.mast{min-height:86px;border-color:var(--line-soft);gap:20px}
+.brand{gap:9px}.brand img{width:42px;height:42px}.brand span{font-size:35px;letter-spacing:-.075em}.brand b{border:0;padding:0;margin:3px 0 0 2px;color:var(--ink);font-size:16px}
+.mast nav{align-self:center;background:var(--wash);border:1px solid var(--line-soft);border-radius:28px;gap:0;padding:4px}
+.mast nav a{padding:7px 17px;line-height:1.3;min-height:34px;border:0;border-radius:20px;font-weight:700;font-size:13px}
+.mast nav a[aria-current]{background:var(--petrol);color:var(--pale)}.coach-button{border-radius:30px;background:transparent;border:1px solid var(--line-soft);gap:7px;padding:3px 13px 3px 5px}
+.coach-button img{width:36px;height:34px}.coach-button span{font-weight:700}
+.menu-band,.menu-band>span,.menu-band>a,.other-top,.other-bottom{display:flex;align-items:center;justify-content:space-between}
+.menu-band{margin:25px 2px 16px;font-size:13px;line-height:1.5}
+.menu-band>span,.menu-band>a{gap:8px}.menu-band>span{font-weight:700}.menu-band>a{text-decoration:none}
+.poster-pair{display:grid;grid-template-columns:minmax(0,2.55fr) minmax(0,1fr);gap:18px}
+.dish-poster,.other-poster,.lesson-poster{position:relative;isolation:isolate;overflow:hidden;border-radius:30px;color:var(--on)}
+.dish-poster,.lesson-poster{background:var(--petrol);--arc:var(--pine);--arc-edge:var(--mint);--platefield:var(--orange)}
+.dish-poster[data-region=fukuoka],.lesson-poster[data-region=fukuoka]{--arc:var(--rose-light);--arc-edge:var(--rose-ink);--platefield:var(--coral);background:var(--rose);color:var(--rose-ink)}
+.dish-poster{min-height:clamp(420px,35.5vw,510px);box-shadow:0 3px 0 var(--line-soft)}
+.paper-arc{position:absolute;z-index:-1;inset:0;overflow:hidden}
+.paper-arc::before,.paper-arc::after{content:"";position:absolute;aspect-ratio:1;border-radius:50%}
+.paper-arc::before{width:100%;right:-48%;top:-45%;background:var(--arc);box-shadow:0 0 0 1px var(--arc-edge)}
+.paper-arc::after{width:72%;right:-31%;bottom:-70%;background:var(--platefield);box-shadow:0 0 0 1px var(--ink)}
+.poster-copy.ticket-text{position:relative;z-index:2;width:49%;padding:clamp(24px,3.3vw,48px);padding-right:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:inherit}
+.region-name{font-size:13px;font-weight:700;line-height:1.4}.region-name span{opacity:.55;padding:0 4px}
+.poster-copy h1{font-size:clamp(64px,6.9vw,103px);line-height:.97;letter-spacing:-.065em;margin:19px 0 7px;overflow-wrap:normal}
+.dish-poster[data-region=fukuoka] h1{font-size:clamp(50px,5.4vw,79px)}
+.jp-title{font:700 clamp(20px,2.1vw,31px)/1.45 var(--body);letter-spacing:-.045em}
+.poster-focus{max-width:31ch;font-size:14px;line-height:1.55;margin:15px 0 22px}
+.poster-copy .cta,.lesson-vocab .cta{background:var(--orange);color:var(--petrol);border:1px solid var(--petrol);font-weight:700;border-radius:50px;min-height:47px;gap:21px;padding:0 20px;box-shadow:0 3px 0 var(--food-shadow);transition:transform .16s,box-shadow .16s}
+.dish-poster[data-region=fukuoka] .cta{background:var(--petrol);color:var(--on)}
+.poster-copy .cta:hover,.lesson-vocab .cta:hover{transform:translateY(-2px);box-shadow:0 5px 0 var(--food-shadow)}
+.food-plate{display:block;width:100%;height:auto;filter:drop-shadow(3px 13px 9px var(--food-shadow))}
+.poster-art{position:absolute;z-index:1;width:52%;right:1.4%;top:50%;transform:translateY(-50%) rotate(7deg);pointer-events:none}
+.poster-art .food-plate{animation:serve-in .46s ease-out both}
+@keyframes serve-in{from{opacity:.5;transform:translateY(7px) rotate(-7deg)}to{opacity:1;transform:none}}
+.poster-print{position:absolute;z-index:2;bottom:20px;right:20px;font:700 13px/1 var(--serif);border:1px solid currentColor;border-radius:4px;padding:5px 6px;transform:rotate(-7deg)}
+.other-poster{display:flex;flex-direction:column;align-items:stretch;text-align:left;justify-content:space-between;background:var(--rose);color:var(--rose-ink);padding:22px;box-shadow:0 3px 0 var(--line-soft);transition:transform .18s}
+.other-poster:hover{transform:translateY(-3px)}
+.other-poster::before{content:"";position:absolute;inset:17% -32% auto 24%;aspect-ratio:1;z-index:-1;border-radius:50%;background:var(--rose-light);border:1px solid var(--rose-ink)}
+.other-poster[data-region=hokkaido]{background:var(--mint);color:var(--petrol)}.other-poster[data-region=hokkaido]::before{background:var(--pistachio);border-color:var(--petrol)}
+.other-top,.other-bottom{font:700 13px/1.4 var(--body);gap:8px}
+.other-top svg{box-sizing:content-box;border:1px solid currentColor;border-radius:50%;padding:7px;flex:none;transform:rotate(-35deg)}
+.other-disc{position:relative;display:block;width:75%;max-width:250px;align-self:center;margin:12px 0 16px;transform:rotate(-9deg)}
+.other-poster strong{font:400 clamp(27px,3vw,46px)/1.08 var(--display);letter-spacing:-.057em;max-width:9ch}
+.other-bottom{border-top:1px solid currentColor;margin-top:15px;padding-top:10px;font-size:12px}.other-bottom [lang]{font-weight:700}
+.ear-panel{display:flex;align-items:center;gap:24px;flex-wrap:wrap;background:var(--pale);border:1px solid var(--line-soft);border-radius:22px;margin-top:19px;padding:20px clamp(18px,2.4vw,35px);position:relative}
+.ear-label,.ear-tools,.ear-choices{display:flex;align-items:center;gap:12px}.ear-label{flex:1;gap:15px}.ear-tools{gap:20px}
+.sound-mark{display:grid;place-items:center;background:var(--pistachio);border:1px solid var(--petrol);border-radius:50%;width:48px;height:48px;flex:none}
+.ear-label h2{font-size:clamp(20px,2.1vw,29px);line-height:1.25}.ear-label p{font-size:13px;margin-top:3px}
+.ear-panel button{border-radius:24px;border:1px solid var(--line-soft);min-height:40px;padding:7px 15px;background:transparent;display:inline-flex;gap:8px;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.ear-panel .listen-sample{background:var(--petrol);color:var(--on);border-color:var(--petrol)}
+.ear-choices{gap:7px}.ear-answer:hover{background:var(--wash)}.ear-panel .missed{background:var(--rose)}
+.sample-reading{font-size:11px;color:var(--mute)}.sample-reading summary{cursor:pointer;padding-block:5px}.sample-reading[open] span{font-size:14px;color:var(--ink)}
+footer{margin-top:26px;padding-bottom:16px}footer span{font:700 12px var(--body)}
+.lesson-bar{margin:22px 0}.lesson-bar a{font-weight:700}
+.word-session{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);gap:clamp(24px,4.5vw,68px);align-items:stretch}
+.lesson-poster{display:flex;flex-direction:column;background:var(--petrol)}
+.lesson-art{position:relative;overflow:hidden;height:clamp(195px,19vw,270px);background:var(--arc);border-bottom:1px solid var(--line-soft)}
+.lesson-art::before{content:"";position:absolute;width:90%;aspect-ratio:1;left:-25%;top:-20%;border-radius:50%;background:var(--platefield)}
+.lesson-art .food-plate{width:64%;max-width:340px;position:absolute;bottom:-29%;right:9%;transform:rotate(12deg)}
+.lesson-caption{padding:clamp(20px,2.4vw,36px)}.lesson-caption h1{font-size:clamp(37px,4vw,60px);line-height:1;margin:10px 0}.lesson-caption .jp-title{font-size:19px}.lesson-caption>p:last-child{font-size:14px;line-height:1.65;margin-top:12px;max-width:51ch}
+.lesson-vocab{min-width:0;align-self:center}
+.word-intro{margin-bottom:13px}.word-intro h2{font-size:clamp(25px,2.7vw,40px)}.word-intro p{font-size:13px;color:var(--mute);margin-top:6px}
+.lesson-vocab .word-row{padding:8px 0;border-color:var(--line-soft)}.lesson-vocab .word-row strong{font:700 20px/1.2 var(--body)}.lesson-vocab .word-row .circle{color:var(--petrol);background:var(--wash);border-color:var(--line-soft)}.lesson-vocab .cta{margin-top:16px}
+@media(max-width:1050px){
+ .poster-pair{grid-template-columns:minmax(0,2.3fr) minmax(0,1fr);gap:13px}.dish-poster{min-height:385px}
+ .poster-copy.ticket-text{width:53%;padding:25px 0 25px 25px}.poster-art{width:47%;right:1%}.poster-copy h1{font-size:clamp(58px,6.9vw,80px)}
+ .poster-focus{font-size:13px}.other-poster{padding:18px}.other-top{font-size:12px}.ear-panel{gap:14px}.ear-tools{gap:7px}
+}
+@media(max-width:760px){
+ .mast{min-height:64px;gap:8px}.brand{gap:5px}.brand img{width:31px;height:31px}.brand span{font-size:26px}.brand b{display:none}
+ .mast nav{padding:2px}.mast nav a{font-size:12px;padding:5px 10px;min-height:31px}.coach-button{padding:2px 5px}.coach-button span{display:none}
+ .menu-band{margin:17px 1px 12px}.menu-band,.menu-band>a{font-size:12px}
+ .poster-pair{grid-template-columns:minmax(0,1fr)}.dish-poster{min-height:360px;border-radius:23px}
+ .poster-copy.ticket-text{width:53%;padding:23px 0 25px 23px}.poster-art{width:49%;right:1.8%}
+ .other-poster{display:grid;grid-template-columns:56px 1fr auto;grid-template-rows:auto auto;column-gap:13px;row-gap:3px;padding:10px 16px;border-radius:18px}.other-poster::before{width:135px;inset:auto auto -70% -28px;}
+ .other-poster strong{font-size:19px;max-width:none;grid-area:2/2}.other-top{grid-area:1/2;padding-top:4px}
+ .other-top svg{position:absolute;right:14px;top:50%;transform:translateY(-50%) rotate(-35deg);width:16px;height:16px}
+ .other-disc{width:55px;height:55px;margin:0;grid-area:1/1/3/2}.other-disc img{max-height:100%;object-fit:contain;filter:drop-shadow(1px 3px 2px var(--card-shadow))}
+ .other-bottom{display:none}.ear-panel{padding:15px 18px;gap:14px;border-radius:18px;margin-top:13px}.ear-label{min-width:190px}.sound-mark{width:37px;height:37px}.ear-tools{gap:12px}
+ .word-session{gap:18px;grid-template-columns:minmax(0,1fr)}.lesson-poster{border-radius:18px;min-height:160px}.lesson-art{position:absolute;inset:0 0 0 auto;width:32%;height:auto}.lesson-art .food-plate{top:50%;bottom:auto;right:-25%;width:128%;transform:translateY(-50%) rotate(12deg)}.lesson-caption{padding:19px;width:67%}.lesson-caption h1{font-size:30px}.lesson-caption>p:last-child{font-size:12px}
+}
+@media(max-width:520px){
+ .poster-copy.ticket-text{width:100%;min-height:382px;display:block;padding:22px 19px}.dish-poster{min-height:382px}
+ .poster-art{width:57%;right:-8%;top:43%;transform:translateY(-50%) rotate(9deg)}
+ .poster-copy h1{font-size:clamp(52px,14vw,69px);margin:22px 0 7px}.dish-poster[data-region=fukuoka] h1{font-size:clamp(35px,9.1vw,46px)}
+ .region-name{font-size:12px}.jp-title{font-size:18px}.poster-copy h1,.poster-copy .jp-title{position:relative;width:57%}
+ .poster-focus{margin:23px 0 14px;max-width:29ch;font-size:13px}.poster-copy .cta{min-height:43px}.poster-print{right:14px;bottom:15px;font-size:11px}
+ .paper-arc::before{width:122%;right:-76%;top:-16%}.paper-arc::after{width:85%;right:-48%;bottom:-38%}
+ .ear-panel{gap:10px}.ear-label{gap:10px;flex-basis:100%}.ear-tools{width:100%;justify-content:flex-start;gap:8px}.ear-panel button{padding:6px 12px;min-height:37px;font-size:12px}
+ .sample-reading{position:static}.sample-reading:not([open]) summary{padding:1px 0}.ear-label h2{font-size:19px}
+}
+@media(max-width:360px){.brand span{font-size:22px}.mast nav a{padding:5px 7px}.poster-copy.ticket-text{padding:18px 15px}.region-name{font-size:11px}.poster-art{width:51%;right:-8%}.poster-copy h1{font-size:47px}.ear-panel{padding:13px}.ear-tools{gap:4px}.ear-choices{gap:4px}}
+@media(prefers-reduced-motion:reduce){.poster-art .food-plate{animation:none}.other-poster,.poster-copy .cta,.lesson-vocab .cta{transition:none}}
+@media (max-width:760px){
+ .mast{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px}.mast nav{justify-self:center;gap:0;margin:0}.brand{justify-self:start}
+ .coach-button{justify-self:end;width:39px;height:39px;min-height:0;padding:2px;justify-content:center;border:1px solid var(--line-soft)}.coach-button:after{content:none}
+ .coach-button img{width:30px;height:30px}
+}
+@media(max-width:520px){
+ .poster-copy.ticket-text{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto auto 1fr auto;align-items:start;justify-items:start;min-height:352px}
+ .dish-poster{min-height:352px}.poster-copy h1{margin:14px 0 4px}.poster-art{width:50%;right:-4.8%;top:48px;transform:rotate(3deg)}
+ .poster-focus{align-self:end;margin:0 0 13px;max-width:31ch}.poster-copy .cta{grid-column:1}
+ .dish-poster[data-region=fukuoka] .poster-art{width:46%;right:-5.5%}
+ .dish-poster[data-region=fukuoka] .poster-copy h1{margin-top:24px}
+ .menu-band{gap:5px;font-size:12px}.menu-band>span,.menu-band>a{gap:5px;white-space:nowrap}.menu-band svg{width:13px}
+}
+@media(max-width:360px){
+ .brand img{width:26px;height:26px}.brand span{font-size:20px}.mast nav a{font-size:11px;padding:5px 6px}
+ .coach-button{width:32px;height:32px}.coach-button img{width:27px;height:27px}
+ .menu-band,.menu-band>a{font-size:11px}.poster-art{width:47%;top:47px}
+}
+.brand span{letter-spacing:-.045em}
+.poster-copy h1{letter-spacing:-.048em}.other-poster strong{letter-spacing:-.035em}.ear-label h2{letter-spacing:-.03em}
+.listen-sample.playing svg{animation:hear-beat .5s ease-in-out infinite alternate}
+@keyframes hear-beat{to{transform:scale(.78)}}
+@media(max-width:520px){.poster-art{top:21px}.paper-arc::after{width:74%;right:-43%;bottom:-43%}}
+@media(prefers-reduced-motion:reduce){.listen-sample.playing svg{animation:none}}

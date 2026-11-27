@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" width="230" height="196" viewBox="0 0 230 196" role="img" aria-labelledby="title desc">
+<title id="title">味見のおもち</title><desc id="desc">昭和の台所のゴム印を思わせる、手彫りの輪郭。白くてやわらかい丸餅に朱色の三角巾をかぶせ、折り目と横にのぞく結び目を目印にする。木べらを持ったおもち。</desc>
+<metadata><dc:creator>Aidan McFarlane</dc:creator><dc:language>ja</dc:language></metadata>
+
+<g stroke="#213b35" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+<g id="wooden-spoon" fill="#c99768"><path d="M47 144 30 94C17 93 9 79 10 68c1-8 8-11 16-7 11 6 19 22 13 31l16 49Z"/><path d="M17 68q-1 10 10 17" fill="none" stroke-width="2.4"/></g>
+<g fill="#fff8e8"><path d="M80 162q-14 10-12 17c3 7 21 4 32-10m48-4q10 18 22 15c8-2 4-10-4-19"/><path d="M53 136c-1-16 7-43 18-61 13-22 36-34 58-34 28-1 46 15 56 38 6 13 11 30 12 47 8-8 16-9 18-3 3 10-9 21-16 23-4 16-19 24-44 27-17 2-38 2-60 0-25-2-41-10-42-24-12 3-22-5-23-15-1-7 6-12 11-8Z"/></g>
+<g id="kerchief" fill="#ad402e"><path d="M169 58c2-16 12-26 29-30 0 13-5 24-17 31 10-3 20-2 30 2l-8 14-29-11Z"/><path d="M57 101c4-24 16-45 33-58 15-11 32-15 48-12 18 2 33 13 42 28-38 1-75 16-123 42Z"/></g>
+</g>
+<g fill="#f7f1e5"><path d="M74 78c12-18 26-30 45-36-13 9-24 18-33 31Z"/><path d="m140 39 8 3-3 4-8-3Z"/><path d="m153 45 5 3-3 4-5-4Z"/></g>
+<path d="m181 51 9-12m-9 23 13 3" fill="none" stroke="#213b35" stroke-width="2.3" stroke-linecap="round"/>
+<g id="cheeks" fill="#df8a76"><ellipse cx="79" cy="126" rx="10" ry="5" transform="rotate(-10 79 126)"/><ellipse cx="164" cy="111" rx="9" ry="4.8" transform="rotate(-10 164 111)"/></g>
+<g fill="#213b35"><ellipse cx="94" cy="110" rx="5.1" ry="6.7"/><ellipse cx="148" cy="100" rx="5.1" ry="6.7"/></g><path d="M112 117q7 11 17-3" fill="none" stroke="#213b35" stroke-width="4.5" stroke-linecap="round"/>
+<g fill="#213b35" opacity=".53"><path d="m68 145 4-4 2 2-4 4Zm8 4 4-4 2 2-4 4Zm100-19 3-4 2 1-3 5Z"/></g>
+
+</svg>

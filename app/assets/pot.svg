@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" width="280" height="218" viewBox="0 0 280 218" role="img" aria-labelledby="title desc">
+<title id="title">空の土鍋</title><desc id="desc">上から見た、両側に持ち手のある土鍋。中に具材を入れる。</desc>
+<metadata><dc:creator>Aidan McFarlane</dc:creator><dc:language>ja</dc:language></metadata>
+
+<g stroke="#213b35" stroke-linejoin="round">
+<path fill="#b57b57" stroke-width="3.5" fill-rule="evenodd" d="M45 82c-13-4-28-6-34 5-7 14 2 36 17 41l21 5 2-13-18-5c-8-2-13-12-12-18 1-5 9-3 17-1ZM235 82c13-4 28-7 34 4 8 14 1 36-15 42l-22 5-3-13 19-5c8-3 13-12 12-18-1-5-9-3-18 0Z"/>
+<path fill="#b87f58" stroke-width="4.3" d="M140 12c60-1 107 40 108 94s-45 97-105 99c-62 2-111-38-111-93C31 57 78 14 140 12Z"/>
+<path fill="#e3bf93" stroke-width="3.3" d="M140 21c56-1 99 37 99 86s-43 89-98 90c-56 1-100-37-100-86s45-89 99-90Z"/>
+<path fill="#e8cea5" stroke-width="3" d="M139 38c47-1 83 29 84 70s-35 73-82 75c-47 2-84-30-84-71s36-73 82-74Z"/>
+</g><g fill="none" stroke="#a97750" stroke-width="2" stroke-linecap="round"><path d="M74 101c4-21 21-41 44-48m6-2 9-2m24 119c25-3 42-19 50-36"/></g>
+<g stroke="#213b35" fill="none" stroke-width="2.6" stroke-linecap="round"><path d="m119 29 8-2m4 2 8-2m5 2 8-1m-25 162 8 1m5-1 7 1m4-2 8-1"/></g>
+
+</svg>

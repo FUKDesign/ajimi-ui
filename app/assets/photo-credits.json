@@ -1,0 +1,72 @@
+{
+  "osaka": {
+    "title": "Okonomiyaki Osaka 2.JPG",
+    "creator": "Fresh Marv",
+    "source": "https://commons.wikimedia.org/wiki/File:Okonomiyaki_Osaka_2.JPG",
+    "license": "CC BY-SA 3.0",
+    "terms": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "aichi": {
+    "title": "Miso Katsu by jetalone in Nagoya.jpg",
+    "creator": "jetalone from Nagoya",
+    "source": "https://commons.wikimedia.org/wiki/File:Miso_Katsu_by_jetalone_in_Nagoya.jpg",
+    "license": "CC BY 2.0",
+    "terms": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "miyagi": {
+    "title": "Zunda-mochi.jpg",
+    "creator": "Σ64",
+    "source": "https://commons.wikimedia.org/wiki/File:Zunda-mochi.jpg",
+    "license": "CC BY 4.0",
+    "terms": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "niigata": {
+    "title": "TareKatsuDon Poemu.jpg",
+    "creator": "Siriusplot",
+    "source": "https://commons.wikimedia.org/wiki/File:TareKatsuDon_Poemu.jpg",
+    "license": "CC BY-SA 3.0",
+    "terms": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "hiroshima": {
+    "title": "Oyster rice in a pot (5441714730).jpg",
+    "creator": "pelican from Tokyo, Japan",
+    "source": "https://commons.wikimedia.org/wiki/File:Oyster_rice_in_a_pot_(5441714730).jpg",
+    "license": "CC BY-SA 2.0",
+    "terms": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "nagano": {
+    "title": "Nozawana-Oyaki-Nagano.JPG",
+    "creator": "NY066",
+    "source": "https://commons.wikimedia.org/wiki/File:Nozawana-Oyaki-Nagano.JPG",
+    "license": "CC BY-SA 3.0",
+    "terms": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "kagawa": {
+    "title": "讃岐うどん（野菜天） (2147814591).jpg",
+    "creator": "Yamaguchi Yoshiaki from Japan",
+    "source": "https://commons.wikimedia.org/wiki/File:%E8%AE%83%E5%B2%90%E3%81%86%E3%81%A9%E3%82%93%EF%BC%88%E9%87%8E%E8%8F%9C%E5%A4%A9%EF%BC%89_(2147814591).jpg",
+    "license": "CC BY-SA 2.0",
+    "terms": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "tokyo": {
+    "title": "Fukagawameshi.jpg",
+    "creator": "self",
+    "source": "https://commons.wikimedia.org/wiki/File:Fukagawameshi.jpg",
+    "license": "CC BY-SA 3.0",
+    "terms": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "okinawa": {
+    "title": "Gōyā Chanpurū.jpg",
+    "creator": "ノボホショコロトソ",
+    "source": "https://commons.wikimedia.org/wiki/File:G%C5%8Dy%C4%81_Chanpur%C5%AB.jpg",
+    "license": "CC BY 4.0",
+    "terms": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "kyoto": {
+    "title": "Seizansoudou Yudoufu.jpg",
+    "creator": "Kykk wiki",
+    "source": "https://commons.wikimedia.org/wiki/File:Seizansoudou_Yudoufu.jpg",
+    "license": "CC0",
+    "terms": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  }
+}

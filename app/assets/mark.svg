@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+<title id="title">味見</title><desc id="desc">三角巾を結んだ丸餅のしるし。</desc>
+<metadata><dc:creator>Aidan McFarlane</dc:creator><dc:language>ja</dc:language></metadata>
+
+<g fill="#fff8e8" stroke="#213b35" stroke-width="3.8" stroke-linejoin="round" stroke-linecap="round">
+<path d="M7 44C6.7 35 11 22 18 16c7-6 17-8 25-4 9 4 13 14 15 25 2 10-2 15-10 17-9 2-20 2-29 0C11 53 7.6 50 7 44Z"/>
+<path fill="#ad402e" d="M47 17c2-6 7-9 13-10l-2 10-7 3 9 2-2 8-11-9Z"/>
+<path fill="#ad402e" d="M10 32c2-12 10-21 21-23 10-2 18 2 22 9-16 1-28 7-43 14Z"/>
+</g>
+<path fill="#fff8e8" d="m19 23 6-7 9-3-6 6Z"/>
+<g fill="#213b35"><ellipse cx="22" cy="38.8" rx="2.9" ry="3.5"/><ellipse cx="42" cy="35.8" rx="2.9" ry="3.5"/></g>
+<path d="M28 42q4 5.7 9-1" stroke="#213b35" stroke-width="3" stroke-linecap="round" fill="none"/>
+</svg>

@@ -1,0 +1,8 @@
+Ajimi / 味見 — 3D food studies
+Creator: Aidan McFarlane
+
+Both models are original procedural illustrations. The rice grains, mentaiko lobes and roe, nori, chicken drumstick, vegetables, vessels, glazes and broth are generated from geometry and seeded drawing routines. The viewer does not use third-party models, texture images or a photogrammetry scan. The photographic fallback is a separate asset.
+
+The self-hosted viewer includes three.js 0.187.0, Copyright © 2010–2026 three.js authors, under the MIT License. See three-LICENSE.txt.
+
+The editable source is dish-models-source.js. To bundle it as a classic script with the pinned three.js version installed, run esbuild dish-models-source.js --bundle --target=es2020 --format=iife --minify --outfile=viewer.js and place viewer.js in the app root.
