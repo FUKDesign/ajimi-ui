@@ -6,7 +6,7 @@
   const view = $('#view'), app = $('#app'), sheet = $('#sheet'), say = $('#say');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 
-  const [lessons, vocab] = await Promise.all(['data/lessons.json', 'data/vocabulary.json'].map(u => fetch(u).then(r => r.json())));
+  const [lessons, vocab, regions] = await Promise.all(['data/lessons.json', 'data/vocabulary.json', 'data/regions.json'].map(u => fetch(u).then(r => r.json())));
   const byId = Object.fromEntries(lessons.map(l => [l.id, l]));
   const W = k => vocab[k] || {japanese: k, kana: '', romaji: '', english: ''};
 
@@ -129,7 +129,7 @@
     const n = lessons.length, step = 360 / n;
     view.innerHTML = `<section class="table">
       <div class="wheel-zone" aria-hidden="true">
-        <div class="wheel">${lessons.map((l, i) => `<div class="plate" style="--a:${-i * step}deg"><img src="${dishPic(l.id)}" alt="" loading="${Math.abs(i - at) < 3 ? 'eager' : 'lazy'}"></div>`).join('')}</div>
+        <div class="wheel">${lessons.map((l, i) => `<div class="plate" style="--a:${-i * step}deg"><svg class="region" viewBox="-8 -8 116 116" aria-hidden="true"><path d="${regions[l.id] || ''}"/><text x="50" y="6" text-anchor="middle" lang="ja">${esc(l.kanji)}</text><text class="rn" x="50" y="104" text-anchor="middle">${esc(l.name)}</text></svg><img src="${dishPic(l.id)}" alt="" loading="${Math.abs(i - at) < 3 ? 'eager' : 'lazy'}"></div>`).join('')}</div>
         <div class="table-head"><img src="../assets/mark.svg" alt=""><span></span></div>
       </div>
       <div class="dish-card glass" role="group" aria-roledescription="carousel" aria-label="Regional dishes">

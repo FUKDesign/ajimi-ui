@@ -5,6 +5,7 @@ import { withSiteSocialMetadata } from "../../lib/seo";
 import copy from "../data/ajimi-case.json";
 import { createElement } from "react";
 import { preinit } from "react-dom";
+import AjimiDeepDive from "./ajimi-deep-dive";
 
 const cover = "/ajimi/story/cover.webp";
 const kitchen = "/ajimi/next/index.html";
@@ -26,6 +27,8 @@ export function ajimiMetadata(locale: Locale): Metadata {
 }
 
 export default function AjimiCasePage({locale}: {locale: Locale}) {
+  // English carries the full deep dive. Japanese and Korean keep the short page until the long copy is translated.
+  if (locale === "en") return <AjimiDeepDive />;
   preinit("/ajimi/story/story.css", { as: "style", precedence: "ajimi" });
   const text = copy[locale];
   return (

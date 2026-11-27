@@ -23,7 +23,7 @@
   --glass-edge:rgba(255,255,255,.9);
   --shade:rgba(31,58,52,.16);
   --shade-deep:rgba(31,58,52,.28);
-  --display:"Kiwi Maru","BIZ UDPGothic",serif;
+  --display:"sauna-new","Kiwi Maru","BIZ UDPGothic",serif;
   --text:"Atkinson Next","BIZ UDPGothic",system-ui,sans-serif;
   --jp:"BIZ UDPGothic","Atkinson Next",sans-serif;
   --r-s:14px; --r-m:22px; --r-l:32px;
@@ -337,3 +337,23 @@ details.diet summary{min-height:44px;display:flex;align-items:center;font-weight
 .pot.clay-act[data-method=hold] .tech-engaged .heat{opacity:1}
 .lines li.now .ja{font-size:clamp(17px,4.6vw,21px)}
 @media (prefers-reduced-motion:reduce){.pot.clay-act .tech-engaged img{animation:none!important;transform:scale(.97)}.heat{display:none}}
+
+/* ───── each dish sits on the outline of its prefecture, with the name written on it ───── */
+.region{position:absolute;left:50%;top:50%;width:210%;height:210%;transform:translate(-50%,-50%);z-index:-1;opacity:0;transition:opacity .5s var(--ease);pointer-events:none;overflow:visible}
+.plate.cur .region{opacity:1}
+.region path{fill:rgba(255,255,255,.34);stroke:#fff;stroke-width:1.1;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.region text{font:500 9px var(--display);fill:var(--ink);paint-order:stroke;stroke:rgba(255,255,255,.75);stroke-width:2.4px;stroke-linejoin:round}
+.region .rn{font:700 5.2px var(--text);fill:var(--ink-soft);letter-spacing:.04em}
+@media (prefers-reduced-motion:reduce){.region{transition:none}}
+
+/* ───── the chosen dish fills the table: it zooms in large each time the table turns ───── */
+.plate img{transition:transform .7s cubic-bezier(.2,.9,.2,1)}
+.plate.cur{z-index:3}
+.plate.cur img{transform:scale(1.5);animation:dish-in .75s cubic-bezier(.2,.9,.2,1)}
+.plate:not(.cur) img{transform:scale(.7)}
+@keyframes dish-in{0%{transform:scale(.8)}60%{transform:scale(1.62)}100%{transform:scale(1.5)}}
+.region{width:150%;height:150%}
+@media (min-width:860px){.plate.cur img{transform:scale(1.9);animation-name:dish-in-wide}.plate:not(.cur) img{transform:scale(.8)}}
+@keyframes dish-in-wide{0%{transform:scale(1)}60%{transform:scale(2.05)}100%{transform:scale(1.9)}}
+@media (prefers-reduced-motion:reduce){.plate img{transition:none}.plate.cur img{animation:none}}
+@media (max-width:859px){.region{width:235%;height:235%}}
