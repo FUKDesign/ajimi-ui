@@ -7,14 +7,17 @@
 @font-face{font-family:"Kiwi Maru";src:url(../../fonts/kiwi-medium.woff2) format("woff2");font-weight:500;font-display:swap}
 @font-face{font-family:"Atkinson Next";src:url(../../fonts/atkinson-next.woff2) format("woff2");font-weight:200 800;font-display:swap}
 @font-face{font-family:"BIZ UDPGothic";src:url(../../fonts/gothic.woff2) format("woff2");font-weight:400;font-display:swap}
+/* Atkinson, Sauna and Kiwi Maru have no ō, so macron vowels would fall through to the wide Japanese face. This sends every macron vowel to one Latin system face at the same size. */
+@font-face{font-family:"Macron";src:local("Helvetica Neue"),local("Arial"),local("Roboto"),local("Segoe UI");unicode-range:U+0100-0101,U+0112-0113,U+012A-012B,U+014C-014D,U+016A-016B}
+@font-face{font-family:"Macron Display";src:local("HelveticaNeue-Light"),local("Helvetica Neue Light"),local("Segoe UI Light"),local("Roboto Light"),local("Arial");unicode-range:U+0100-0101,U+0112-0113,U+012A-012B,U+014C-014D,U+016A-016B;size-adjust:90%}
 :root{
   --paper:#ffffff; --rice:#f7f3ea; --rice-deep:#ece5d6; --ink:#1f3a34; --ink-soft:#54665f;
   --celadon:#cfdcd2; --celadon-deep:#4f7868; --vermilion:#b4412d; --dashi:#e3a93f; --dashi-pale:#f8e7bd;
   --shade:rgba(31,58,52,.16); --shade-deep:rgba(31,58,52,.28); --shade-in:rgba(31,58,52,.12);
   --lit:rgba(255,255,255,.28); --lit-strong:rgba(255,255,255,.5); --clay-dark:rgba(80,20,10,.3); --clay-soft:rgba(120,100,60,.14); --press:rgba(0,0,0,.2);
   --cloth-dashi:#f6d99c; --cloth-rose:#efc2b2; --cloth-celadon:#a9cdb9; --cloth-base:#f4e7cd; --wheel:#b9cfc0; --wheel-lit:#d7e6dc; --lit-wheel:rgba(255,255,255,.55); --glass:rgba(255,255,255,.72); --drop:rgba(31,58,52,.3);
-  --display:"sauna-new","Kiwi Maru","BIZ UDPGothic",serif;
-  --text:"Atkinson Next","BIZ UDPGothic",system-ui,sans-serif;
+  --display:"Macron Display","sauna-new","Kiwi Maru","BIZ UDPGothic",serif;
+  --text:"Macron","Atkinson Next","BIZ UDPGothic",system-ui,sans-serif;
   --jp:"BIZ UDPGothic",sans-serif;
   --wrap:1180px; --gut:clamp(20px,5vw,56px); --gap:clamp(20px,3vw,40px);
   --r:26px; --ease:cubic-bezier(.2,.8,.2,1);

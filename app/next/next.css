@@ -6,6 +6,9 @@
 @font-face{font-family:"BIZ UDPGothic";src:url(../fonts/gothic.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"BIZ UDPGothic";src:url(../fonts/gothic-bold.woff2) format("woff2");font-weight:700;font-display:swap}
 
+/* Atkinson, Sauna and Kiwi Maru have no ō, so macron vowels would fall through to the wide Japanese face. This sends every macron vowel to one Latin system face at the same size. */
+@font-face{font-family:"Macron";src:local("Helvetica Neue"),local("Arial"),local("Roboto"),local("Segoe UI");unicode-range:U+0100-0101,U+0112-0113,U+012A-012B,U+014C-014D,U+016A-016B}
+@font-face{font-family:"Macron Display";src:local("HelveticaNeue-Light"),local("Helvetica Neue Light"),local("Segoe UI Light"),local("Roboto Light"),local("Arial");unicode-range:U+0100-0101,U+0112-0113,U+012A-012B,U+014C-014D,U+016A-016B;size-adjust:90%}
 :root{
   --paper:#ffffff;
   --rice:#f7f3ea;
@@ -23,8 +26,8 @@
   --glass-edge:rgba(255,255,255,.9);
   --shade:rgba(31,58,52,.16);
   --shade-deep:rgba(31,58,52,.28);
-  --display:"sauna-new","Kiwi Maru","BIZ UDPGothic",serif;
-  --text:"Atkinson Next","BIZ UDPGothic",system-ui,sans-serif;
+  --display:"Macron Display","sauna-new","Kiwi Maru","BIZ UDPGothic",serif;
+  --text:"Macron","Atkinson Next","BIZ UDPGothic",system-ui,sans-serif;
   --jp:"BIZ UDPGothic","Atkinson Next",sans-serif;
   --r-s:14px; --r-m:22px; --r-l:32px;
   --ease:cubic-bezier(.2,.8,.2,1);
