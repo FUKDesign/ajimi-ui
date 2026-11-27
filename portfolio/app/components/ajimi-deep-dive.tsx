@@ -166,7 +166,7 @@ export default function AjimiDeepDive() {
               {kitchens.map(item => <li key={item.id}>
                 <div className="ajd-kitchen-art">
                   <svg viewBox="-6 -6 112 112" aria-hidden="true"><path d={outlines[item.id]} /><text x="50" y="16" textAnchor="middle" lang="ja">{item.kanji}</text></svg>
-                  <img src={dish(item.id)} width="880" height="880" loading="lazy" alt={"Clay model of " + item.dish} />
+                  <img src={dish(item.id)} width="760" height="760" loading="lazy" alt={"Clay model of " + item.dish} />
                 </div>
                 <b>{item.dish}</b>
                 <span>{item.name}: <span lang="ja">{item.verb}</span> {item.roman}, to {item.en}</span>

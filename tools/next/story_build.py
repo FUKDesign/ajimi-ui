@@ -6,7 +6,7 @@ V = json.load(open(R + 'data/vocabulary.json'))
 e = html.escape
 dish = lambda i: '../img/bowl-3.webp' if i == 'kagawa' else f'../img/dish-{i}.webp'
 n = len(L)
-plates = ''.join(f'<li style="--a:{i * 360 / n:.0f}deg"><img src="{dish(l["id"])}" alt="" width="880" height="880" loading="lazy"></li>' for i, l in enumerate(L))
+plates = ''.join(f'<li style="--a:{i * 360 / n:.0f}deg"><img src="{dish(l["id"])}" alt="" width="760" height="760" loading="lazy"></li>' for i, l in enumerate(L))
 labels = ''.join(
     f'<li{" class=on" if i == 0 else ""}><p class="where">{e(l["name"])} <span lang="ja">{e(l["kanji"])}</span></p>'
     f'<h3>{e(l["dish"])} <span lang="ja">{e(l["jp"])}</span></h3>'
@@ -17,7 +17,7 @@ keys = []
 for l in L:
     for k in l['ingredients'] + [b[0] for b in l['bottles']]:
         if k not in keys: keys.append(k)
-parade = ''.join(f'<img src="../img/{clay.get(k, k)}.webp" alt="Clay {e(V[k]["english"])}" width="760" height="760" loading="lazy">' for k in keys)
+parade = ''.join(f'<img src="../img/{clay.get(k, k)}.webp" alt="Clay {e(V[k]["english"])}" width="640" height="640" loading="lazy">' for k in keys)
 models = len(keys) + n
 
 page = f'''<!doctype html>
@@ -63,11 +63,11 @@ page = f'''<!doctype html>
     </div>
     <div class="hero-stage">
       <figure class="hero-pic" role="img" aria-label="A clay bowl fills with udon, then broth, then spring onion and ginger">
-        <div class="bowl-stack"><img src="../img/bowl-0.webp" alt="" width="880" height="880"><img src="../img/bowl-1.webp" alt="" width="880" height="880"><img src="../img/bowl-2.webp" alt="" width="880" height="880"><img src="../img/bowl-3.webp" alt="" width="880" height="880"></div>
+        <div class="bowl-stack"><img src="../img/bowl-0.webp" alt="" width="760" height="760"><img src="../img/bowl-1.webp" alt="" width="760" height="760"><img src="../img/bowl-2.webp" alt="" width="760" height="760"><img src="../img/bowl-3.webp" alt="" width="760" height="760"></div>
         <span class="tag t1" lang="ja">うどん<small lang="en">udon</small></span>
         <span class="tag t2" lang="ja">だし<small lang="en">dashi</small></span>
         <span class="tag t3" lang="ja">ねぎ<small lang="en">negi</small></span>
-        <img class="hero-mochi" src="../img/mochi-happy.webp" alt="" width="600" height="600">
+        <img class="hero-mochi" src="../img/mochi-happy.webp" alt="" width="520" height="520">
       </figure>
     </div>
   </div>
@@ -83,7 +83,7 @@ page = f'''<!doctype html>
       </div>
       <figure class="job-fig" data-scrub aria-label="Five Japanese words drop into an empty bowl and it fills with udon">
         <div class="chips" lang="ja"><span style="--i:0">うどん</span><span style="--i:1">ゆでる</span><span style="--i:2">だし</span><span style="--i:3">ねぎ</span><span style="--i:4">しょうが</span></div>
-        <div class="job-bowl"><img src="../img/bowl-0.webp" alt="" width="880" height="880" loading="lazy"><img src="../img/bowl-3.webp" alt="" width="880" height="880" loading="lazy"></div>
+        <div class="job-bowl"><img src="../img/bowl-0.webp" alt="" width="760" height="760" loading="lazy"><img src="../img/bowl-3.webp" alt="" width="760" height="760" loading="lazy"></div>
       </figure>
       <ul class="figures">
         <li data-reveal><b data-count="4000750">4,000,750</b><span>people study Japanese at institutions outside Japan. Self-taught learners are not counted.</span><a href="https://www.jpf.go.jp/j/about/press/2025/dl/2025-031-03.pdf">Japan Foundation, 2024 survey</a></li>
@@ -176,7 +176,7 @@ page = f'''<!doctype html>
         <h2>What the mochi is for</h2>
         <p>The first version had a character and no job for it. Ajimi means tasting as you cook, so Mochi became the taster. Two more jobs followed from that.</p>
       </div>
-      <div class="mochi-stage" aria-hidden="true"><img src="../img/mochi-happy.webp" alt="" width="600" height="600" loading="lazy"><img src="../img/mochi-puff.webp" alt="" width="600" height="600" loading="lazy"><img src="../img/mochi-idle.webp" alt="" width="600" height="600" loading="lazy"></div>
+      <div class="mochi-stage" aria-hidden="true"><img src="../img/mochi-happy.webp" alt="" width="520" height="520" loading="lazy"><img src="../img/mochi-puff.webp" alt="" width="520" height="520" loading="lazy"><img src="../img/mochi-idle.webp" alt="" width="520" height="520" loading="lazy"></div>
       <ul class="jobs">
         <li class="on"><h3>Taster</h3><p>There is no score. Mochi tastes the bowl and tells you, in Japanese, how it went.</p></li>
         <li><h3>Keeper of misses</h3><p>A wrong answer puffs Mochi up. It also keeps that word and asks you first next time.</p></li>
