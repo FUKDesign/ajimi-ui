@@ -31,6 +31,9 @@ for n in names:
         part = lab == i
         if part.sum() > alpha.size * 0.001 and 0.02 < 1 - alpha[part].mean() and n in RESCUE:
             alpha = np.maximum(alpha, np.asarray(Image.fromarray((part * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1))).astype(np.float32) / 255 * (alpha[part].mean() < 0.85))
+    if big:                                                   # a notch the mask bit out of a rim: close it where the picture has plate
+        shut = ndi.binary_fill_holes(ndi.binary_closing(np.pad(alpha > 0.5, 80), iterations=60)[80:-80, 80:-80]) & ((src.mean(axis=2) < 228) | (mx - mn > 22))
+        alpha = np.maximum(alpha, np.asarray(Image.fromarray((shut * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1))).astype(np.float32) / 255)
     if n in DESHADOW:                                         # a grey cast shadow the mask kept between two objects
         grey = ndi.binary_opening((mx - mn < 11) & (src.mean(axis=2) > 185), iterations=3)
         alpha = alpha * (1 - np.asarray(Image.fromarray((grey * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1.2))).astype(np.float32) / 255)
