@@ -85,11 +85,11 @@ page = f'''<!doctype html>
         <div class="chips" lang="ja"><span style="--i:0">うどん</span><span style="--i:1">ゆでる</span><span style="--i:2">だし</span><span style="--i:3">ねぎ</span><span style="--i:4">しょうが</span></div>
         <div class="job-bowl"><img src="../img/bowl-0.webp" alt="" width="880" height="880" loading="lazy"><img src="../img/bowl-3.webp" alt="" width="880" height="880" loading="lazy"></div>
       </figure>
+      <ul class="figures">
+        <li data-reveal><b data-count="4000750">4,000,750</b><span>people study Japanese at institutions outside Japan. Self-taught learners are not counted.</span><a href="https://www.jpf.go.jp/j/about/press/2025/dl/2025-031-03.pdf">Japan Foundation, 2024 survey</a></li>
+        <li data-reveal><b data-count="42.7" data-suffix=" million">42.7 million</b><span>people visited Japan in 2025, a record.</span><a href="https://www.jnto.go.jp/news/press/20260121_monthly.html">JNTO, January 2026</a></li>
+      </ul>
     </div>
-    <ul class="figures">
-      <li data-reveal><b data-count="4000750">4,000,750</b><span>people study Japanese at institutions outside Japan. Self-taught learners are not counted.</span><a href="https://www.jpf.go.jp/j/about/press/2025/dl/2025-031-03.pdf">Japan Foundation, 2024 survey</a></li>
-      <li data-reveal><b data-count="42.7" data-suffix=" million">42.7 million</b><span>people visited Japan in 2025, a record.</span><a href="https://www.jnto.go.jp/news/press/20260121_monthly.html">JNTO, January 2026</a></li>
-    </ul>
     <div class="people">
       <article data-reveal><h3>The learner at home</h3><p>Knows kana, has tried an app or two, and stops when lessons feel like filing. Wants Japanese that turns up in ordinary life.</p></article>
       <article data-reveal><h3>The visitor who came for the food</h3><p>Has a trip booked and a list of dishes. Wants to read a menu and follow what the cook is saying.</p></article>
