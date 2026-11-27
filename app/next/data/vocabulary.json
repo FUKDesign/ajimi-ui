@@ -1,0 +1,356 @@
+{
+  "chicken": {
+    "japanese": "鶏肉",
+    "kana": "とりにく",
+    "romaji": "toriniku",
+    "english": "chicken"
+  },
+  "carrot": {
+    "japanese": "にんじん",
+    "kana": "にんじん",
+    "romaji": "ninjin",
+    "english": "carrot"
+  },
+  "ginger": {
+    "japanese": "しょうが",
+    "kana": "しょうが",
+    "romaji": "shōga",
+    "english": "ginger"
+  },
+  "soy": {
+    "japanese": "しょうゆ",
+    "kana": "しょうゆ",
+    "romaji": "shōyu",
+    "english": "soy sauce"
+  },
+  "mirin": {
+    "japanese": "みりん",
+    "kana": "みりん",
+    "romaji": "mirin",
+    "english": "sweet rice seasoning"
+  },
+  "pepper": {
+    "japanese": "こしょう",
+    "kana": "こしょう",
+    "romaji": "koshō",
+    "english": "pepper"
+  },
+  "rice": {
+    "japanese": "ご飯",
+    "kana": "ごはん",
+    "romaji": "gohan",
+    "english": "cooked rice"
+  },
+  "roe": {
+    "japanese": "明太子",
+    "kana": "めんたいこ",
+    "romaji": "mentaiko",
+    "english": "spicy pollock roe"
+  },
+  "seaweed": {
+    "japanese": "のり",
+    "kana": "のり",
+    "romaji": "nori",
+    "english": "dried seaweed"
+  },
+  "stock": {
+    "japanese": "だし",
+    "kana": "だし",
+    "romaji": "dashi",
+    "english": "stock"
+  },
+  "little": {
+    "japanese": "少し",
+    "kana": "すこし",
+    "romaji": "sukoshi",
+    "english": "a little"
+  },
+  "twice": {
+    "japanese": "二回",
+    "kana": "にかい",
+    "romaji": "nikai",
+    "english": "twice"
+  },
+  "salty": {
+    "japanese": "塩辛い",
+    "kana": "しおからい",
+    "romaji": "shiokarai",
+    "english": "too salty"
+  },
+  "mild": {
+    "japanese": "味が薄い",
+    "kana": "あじがうすい",
+    "romaji": "aji ga usui",
+    "english": "light or weak in flavour"
+  },
+  "tasty": {
+    "japanese": "おいしい",
+    "kana": "おいしい",
+    "romaji": "oishii",
+    "english": "delicious"
+  },
+  "bland": {
+    "japanese": "うま味が足りない",
+    "kana": "うまみがたりない",
+    "romaji": "umami ga tarinai",
+    "english": "it needs more umami"
+  },
+  "cabbage": {
+    "japanese": "キャベツ",
+    "kana": "きゃべつ",
+    "romaji": "kyabetsu",
+    "english": "cabbage"
+  },
+  "batter": {
+    "japanese": "生地",
+    "kana": "きじ",
+    "romaji": "kiji",
+    "english": "batter"
+  },
+  "pork": {
+    "japanese": "豚肉",
+    "kana": "ぶたにく",
+    "romaji": "butaniku",
+    "english": "pork"
+  },
+  "okonomisauce": {
+    "japanese": "お好みソース",
+    "kana": "おこのみそーす",
+    "romaji": "okonomi sōsu",
+    "english": "okonomiyaki sauce"
+  },
+  "mayo": {
+    "japanese": "マヨネーズ",
+    "kana": "まよねーず",
+    "romaji": "mayonēzu",
+    "english": "mayonnaise"
+  },
+  "cutlet": {
+    "japanese": "とんかつ",
+    "kana": "とんかつ",
+    "romaji": "tonkatsu",
+    "english": "breaded pork cutlet"
+  },
+  "sesame": {
+    "japanese": "ごま",
+    "kana": "ごま",
+    "romaji": "goma",
+    "english": "sesame seeds"
+  },
+  "misosauce": {
+    "japanese": "みそだれ",
+    "kana": "みそだれ",
+    "romaji": "miso dare",
+    "english": "miso sauce"
+  },
+  "mustard": {
+    "japanese": "からし",
+    "kana": "からし",
+    "romaji": "karashi",
+    "english": "Japanese mustard"
+  },
+  "edamame": {
+    "japanese": "枝豆",
+    "kana": "えだまめ",
+    "romaji": "edamame",
+    "english": "green soybeans"
+  },
+  "sugar": {
+    "japanese": "砂糖",
+    "kana": "さとう",
+    "romaji": "satō",
+    "english": "sugar"
+  },
+  "mochi": {
+    "japanese": "餅",
+    "kana": "もち",
+    "romaji": "mochi",
+    "english": "rice cake"
+  },
+  "water": {
+    "japanese": "水",
+    "kana": "みず",
+    "romaji": "mizu",
+    "english": "water"
+  },
+  "salt": {
+    "japanese": "塩",
+    "kana": "しお",
+    "romaji": "shio",
+    "english": "salt"
+  },
+  "rawrice": {
+    "japanese": "米",
+    "kana": "こめ",
+    "romaji": "kome",
+    "english": "uncooked rice"
+  },
+  "oyster": {
+    "japanese": "かき",
+    "kana": "かき",
+    "romaji": "kaki",
+    "english": "oyster"
+  },
+  "dough": {
+    "japanese": "皮",
+    "kana": "かわ",
+    "romaji": "kawa",
+    "english": "dumpling wrapper"
+  },
+  "eggplant": {
+    "japanese": "なす",
+    "kana": "なす",
+    "romaji": "nasu",
+    "english": "aubergine"
+  },
+  "miso": {
+    "japanese": "みそ",
+    "kana": "みそ",
+    "romaji": "miso",
+    "english": "miso paste"
+  },
+  "oil": {
+    "japanese": "油",
+    "kana": "あぶら",
+    "romaji": "abura",
+    "english": "oil"
+  },
+  "udon": {
+    "japanese": "うどん",
+    "kana": "うどん",
+    "romaji": "udon",
+    "english": "wheat noodles"
+  },
+  "scallion": {
+    "japanese": "ねぎ",
+    "kana": "ねぎ",
+    "romaji": "negi",
+    "english": "spring onion"
+  },
+  "clam": {
+    "japanese": "あさり",
+    "kana": "あさり",
+    "romaji": "asari",
+    "english": "short-neck clam"
+  },
+  "bittergourd": {
+    "japanese": "ゴーヤー",
+    "kana": "ごーやー",
+    "romaji": "gōyā",
+    "english": "bitter melon"
+  },
+  "tofu": {
+    "japanese": "豆腐",
+    "kana": "とうふ",
+    "romaji": "tōfu",
+    "english": "tofu"
+  },
+  "egg": {
+    "japanese": "卵",
+    "kana": "たまご",
+    "romaji": "tamago",
+    "english": "egg"
+  },
+  "kombu": {
+    "japanese": "昆布",
+    "kana": "こんぶ",
+    "romaji": "konbu",
+    "english": "kelp"
+  },
+  "ponzu": {
+    "japanese": "ポン酢",
+    "kana": "ぽんず",
+    "romaji": "ponzu",
+    "english": "citrus dipping sauce"
+  },
+  "once": {
+    "japanese": "一回",
+    "kana": "いっかい",
+    "romaji": "ikkai",
+    "english": "once"
+  },
+  "tech-simmer": {
+    "japanese": "煮込む",
+    "kana": "にこむ",
+    "romaji": "nikomu",
+    "english": "simmer"
+  },
+  "tech-pour": {
+    "japanese": "かける",
+    "kana": "かける",
+    "romaji": "kakeru",
+    "english": "pour over"
+  },
+  "tech-flip": {
+    "japanese": "ひっくり返す",
+    "kana": "ひっくりかえす",
+    "romaji": "hikkurikaesu",
+    "english": "flip over"
+  },
+  "tech-spread": {
+    "japanese": "広げる",
+    "kana": "ひろげる",
+    "romaji": "hirogeru",
+    "english": "spread"
+  },
+  "tech-mash": {
+    "japanese": "つぶす",
+    "kana": "つぶす",
+    "romaji": "tsubusu",
+    "english": "mash"
+  },
+  "tech-dip": {
+    "japanese": "くぐらせる",
+    "kana": "くぐらせる",
+    "romaji": "kuguraseru",
+    "english": "dip briefly"
+  },
+  "tech-cookrice": {
+    "japanese": "炊く",
+    "kana": "たく",
+    "romaji": "taku",
+    "english": "cook rice"
+  },
+  "tech-wrap": {
+    "japanese": "包む",
+    "kana": "つつむ",
+    "romaji": "tsutsumu",
+    "english": "wrap"
+  },
+  "tech-boil": {
+    "japanese": "ゆでる",
+    "kana": "ゆでる",
+    "romaji": "yuderu",
+    "english": "boil"
+  },
+  "tech-stir": {
+    "japanese": "混ぜる",
+    "kana": "まぜる",
+    "romaji": "mazeru",
+    "english": "stir"
+  },
+  "tech-stirfry": {
+    "japanese": "炒める",
+    "kana": "いためる",
+    "romaji": "itameru",
+    "english": "stir-fry"
+  },
+  "tech-warm": {
+    "japanese": "温める",
+    "kana": "あたためる",
+    "romaji": "atatameru",
+    "english": "warm through"
+  },
+  "pancake": {
+    "japanese": "お好み焼き",
+    "kana": "おこのみやき",
+    "romaji": "okonomiyaki",
+    "english": "savoury pancake"
+  },
+  "particle-o": {
+    "japanese": "を",
+    "kana": "を",
+    "romaji": "o",
+    "english": "marks the object of a verb"
+  }
+}

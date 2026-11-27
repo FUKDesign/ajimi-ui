@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<meta name="author" content="Aidan McFarlane">
+<meta name="description" content="Learn Japanese by cooking twelve regional dishes.">
+<title>Ajimi 味見</title>
+<link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="next.css">
+</head>
+<body>
+<div id="app" data-view="table">
+  <main id="view" tabindex="-1"></main>
+  <nav id="tabs" aria-label="Ajimi">
+    <a href="#table" data-tab="table"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/></svg><span>Kitchens</span></a>
+    <a href="#words" data-tab="words"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11v17l-5.5-4-5.5 4z"/></svg><span>Words</span><b id="saved-count" hidden></b></a>
+  </nav>
+</div>
+<div id="sheet" hidden></div>
+<div id="say" class="visually-hidden" role="status"></div>
+<noscript>Ajimi needs JavaScript for listening and cooking.</noscript>
+<script src="../boil.js" defer></script>
+<script src="next.js" defer></script>
+</body>
+</html>

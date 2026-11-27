@@ -7,7 +7,10 @@ import { createElement } from "react";
 import { preinit } from "react-dom";
 
 const cover = "/ajimi/story/cover.webp";
-const kitchen = "/ajimi/index.html";
+const kitchen = "/ajimi/next/index.html";
+const study = "/ajimi/next/story/index.html";
+// Each chapter plays one stretch of the recorded udon lesson.
+const clips = {words: {film: "flow-words", still: "word"}, cook: {film: "flow-season", still: "pour"}, review: {film: "flow-quiz", still: "wrong"}} as const;
 
 export function ajimiMetadata(locale: Locale): Metadata {
   const title = "Ajimi / 味見 | Aidan McFarlane";
@@ -33,6 +36,7 @@ export default function AjimiCasePage({locale}: {locale: Locale}) {
             <div className="aj-lead">
               <h1>Ajimi</h1><p className="aj-deck">{text.deck}</p>
               <a className="aj-action" href={kitchen}>{text.open}</a>
+              <a className="aj-text-link" href={study}>{text.study}</a>
               <div className="aj-byline"><span>{text.byline}</span><span>2026</span></div>
             </div>
             <picture className="aj-cover"><img src={cover} width="880" height="660" alt={text.coverAlt} fetchPriority="high"/></picture>
@@ -41,8 +45,8 @@ export default function AjimiCasePage({locale}: {locale: Locale}) {
         <div className="aj-wrap">
           <section className="aj-premise" aria-labelledby="aj-premise-title">
             <div className="aj-dishes">
-              <div className="aj-dish"><img src="/ajimi/assets/hokkaido-plate.webp" alt="" width="160" height="160" loading="lazy"/><span>{text.sapporo}</span></div>
-              <div className="aj-dish"><img src="/ajimi/assets/fukuoka-plate.webp" alt="" width="160" height="160" loading="lazy"/><span>{text.hakata}</span></div>
+              <div className="aj-dish"><img src="/ajimi/next/img/dish-hokkaido.webp" alt="" width="160" height="160" loading="lazy"/><span>{text.sapporo}</span></div>
+              <div className="aj-dish"><img src="/ajimi/next/img/dish-fukuoka.webp" alt="" width="160" height="160" loading="lazy"/><span>{text.hakata}</span></div>
             </div>
             <div><h2 id="aj-premise-title">{text.premise}</h2><p>{text.premiseBody}</p></div>
           </section>
@@ -61,10 +65,10 @@ export default function AjimiCasePage({locale}: {locale: Locale}) {
                   <div className="aj-card-body">
                     <div className="aj-chapter-copy">{chapter.paragraphs.map(p => <p key={p}>{p}</p>)}</div>
                     <div className="aj-demo">
-                      <video width={chapter.media === "udon" ? 390 : 960} height={chapter.media === "udon" ? 780 : 720}
-                        poster={"/ajimi/story/" + chapter.media + "-still.webp"} src={"/ajimi/media/" + chapter.media + ".mp4"}
+                      <video width={390} height={844}
+                        poster={"/ajimi/next/story/media/" + clips[chapter.media as keyof typeof clips].still + ".webp"} src={"/ajimi/next/story/media/" + clips[chapter.media as keyof typeof clips].film + ".mp4"}
                         aria-label={chapter.alt} muted playsInline loop controls preload="none"/>
-                      <div className="aj-demo-controls"><button type="button" className="aj-play" hidden aria-pressed="false">{text.play}</button>{chapter.media === "udon" && <button type="button" className="aj-sound" hidden aria-pressed="false">{text.soundOn}</button>}<a href={"/ajimi/media/" + chapter.media + ".mp4"}>{text.fullSize}</a></div>
+                      <div className="aj-demo-controls"><button type="button" className="aj-play" hidden aria-pressed="false">{text.play}</button><a href={"/ajimi/next/story/media/" + clips[chapter.media as keyof typeof clips].film + ".mp4"}>{text.fullSize}</a></div>
                     </div>
                   </div>
                 </details>

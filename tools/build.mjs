@@ -13,7 +13,7 @@ async function walk(folder = '') {
   for (const entry of await readdir(path.join(out,folder), { withFileTypes:true })) {
     if (entry.name.startsWith('.')) continue;
     const name = path.posix.join(folder, entry.name);
-    if (['sw.js','media','story','assets/dish-models-source.js'].includes(name)) continue;
+    if (['sw.js','media','story','next','assets/dish-models-source.js'].includes(name)) continue;
     if (entry.isDirectory()) await walk(name);
     else if (entry.isFile()) paths.push(name);
   }
