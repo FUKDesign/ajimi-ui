@@ -10,7 +10,7 @@
   --celadon:#cfdcd2; --celadon-deep:#4f7868; --vermilion:#b4412d; --dashi:#e3a93f; --dashi-pale:#f8e7bd;
   --shade:rgba(31,58,52,.16); --shade-deep:rgba(31,58,52,.28); --shade-in:rgba(31,58,52,.12);
   --lit:rgba(255,255,255,.28); --lit-strong:rgba(255,255,255,.5); --clay-dark:rgba(80,20,10,.3); --clay-soft:rgba(120,100,60,.14); --press:rgba(0,0,0,.2);
-  --display:"Kiwi Maru","BIZ UDPGothic",serif;
+  --display:"sauna-new","Kiwi Maru","BIZ UDPGothic",serif;
   --text:"Atkinson Next","BIZ UDPGothic",system-ui,sans-serif;
   --jp:"BIZ UDPGothic",sans-serif;
   --wrap:1180px; --gut:clamp(20px,5vw,56px); --gap:clamp(20px,3vw,40px);
