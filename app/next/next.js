@@ -129,7 +129,8 @@
     const n = lessons.length, step = 360 / n;
     view.innerHTML = `<section class="table">
       <div class="wheel-zone" aria-hidden="true">
-        <div class="wheel">${lessons.map((l, i) => `<div class="plate" style="--a:${-i * step}deg"><svg class="region" viewBox="-8 -8 116 116" aria-hidden="true"><path d="${regions[l.id] || ''}"/><text x="50" y="6" text-anchor="middle" lang="ja">${esc(l.kanji)}</text><text class="rn" x="50" y="104" text-anchor="middle">${esc(l.name)}</text></svg><img src="${dishPic(l.id)}" alt="" loading="${Math.abs(i - at) < 3 ? 'eager' : 'lazy'}"></div>`).join('')}</div>
+        <div class="wheel">${lessons.map((l, i) => `<div class="plate" style="--a:${-i * step}deg"><img src="${dishPic(l.id)}" alt="" loading="${Math.abs(i - at) < 3 ? 'eager' : 'lazy'}"></div>`).join('')}</div>
+        <div class="focus"></div>
         <div class="table-head"><img src="../assets/mark.svg" alt=""><span></span></div>
       </div>
       <div class="dish-card glass" role="group" aria-roledescription="carousel" aria-label="Regional dishes">
@@ -137,7 +138,13 @@
         <div class="copy" aria-live="polite"></div>
         <div class="dish-actions"><a class="btn go" data-learn>Learn recipe</a><a class="btn soft" data-skip>Skip to recipe</a></div>
       </div></section>`;
-    const wheel = $('.wheel'), copy = $('.copy'), count = $('.table-head span');
+    const wheel = $('.wheel'), copy = $('.copy'), count = $('.table-head span'), focus = $('.focus');
+    /* the chosen dish leaves the wheel, travels to the centre of the screen and grows there, over the outline of its prefecture */
+    const stage = (l, dir) => {
+      const old = $('.focus-in', focus); if (old) { old.className = 'focus-out'; old.style.setProperty('--dir', dir); setTimeout(() => old.remove(), 420); }
+      focus.insertAdjacentHTML('beforeend', `<div class="focus-in" style="--dir:${dir}"><svg class="region" viewBox="-10 -10 120 120"><path d="${regions[l.id] || ''}" pathLength="1"/><text x="50" y="2" text-anchor="middle" lang="ja">${esc(l.kanji)}</text><text class="rn" x="50" y="112" text-anchor="middle">${esc(l.name)}</text></svg><img src="${dishPic(l.id)}" alt=""></div>`);
+    };
+    let lastDir = 0;
     let turn = at * step;
     const paint = () => {
       const l = lessons[at]; sessionStorage.setItem('ajimi-at', l.id);
@@ -145,9 +152,10 @@
       $$('.plate', wheel).forEach((p, i) => p.classList.toggle('cur', i === at));
       copy.innerHTML = `<div class="swap"><div class="where"><span>${esc(l.name)}</span><span lang="ja">${esc(l.kanji)}</span></div><h1>${esc(l.dish)}</h1><div class="jp" lang="ja">${esc(l.jp)}</div><p>${esc(l.focus)}</p></div>`;
       count.textContent = `${at + 1} / ${n}`;
+      if (focus.dataset.id !== l.id) { focus.dataset.id = l.id; stage(l, lastDir); }
       $('[data-learn]').href = `#lesson/${l.id}/ingredients`; $('[data-skip]').href = `#lesson/${l.id}/method`;
     };
-    const go = d => { at = (at + d + n) % n; turn += d * step; paint(); };
+    const go = d => { lastDir = d; at = (at + d + n) % n; turn += d * step; paint(); };
     paint();
     view.onclick = e => { const b = e.target.closest('[data-go]'); if (b) go(+b.dataset.go); };
     view.onkeydown = e => { if (e.key === 'ArrowRight') go(1); if (e.key === 'ArrowLeft') go(-1); };
